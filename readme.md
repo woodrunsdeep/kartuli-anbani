@@ -12,7 +12,7 @@ It will help me (and maybe you as well!) pick up new skills in both areas (front
 This is a work in progress and I'm a beginner frontend developer so don't judge too harshly :)
 I will appreciate any feedback from anyone and will try to improve accordingly.
 
-Available in English and Russian
+Available in Russian (English comming soon)
 Works offline
 Keeps track of your progress
 
