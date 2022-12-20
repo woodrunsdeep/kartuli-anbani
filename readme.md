@@ -13,8 +13,6 @@ This is a work in progress and I'm a beginner frontend developer so don't judge 
 I will appreciate any feedback from anyone and will try to improve accordingly.
 
 Available in Russian (English comming soon)
-Works offline
-Keeps track of your progress
 
 Built with 11ty
 Hosted on Netlify
