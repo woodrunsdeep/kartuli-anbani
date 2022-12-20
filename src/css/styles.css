@@ -1,0 +1,290 @@
+@font-face {
+    font-family: "Noto Sans Georgian";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../assets/fonts/NotoSansGeorgian-Regular.woff2") format("woff2"),
+        url("../assets/fonts/NotoSansGeorgian-Regular.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Sans Georgian";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../assets/fonts/NotoSansGeorgian-Bold.woff2") format("woff2"),
+        url("../assets/fonts/NotoSansGeorgian-Bold.woff") format("woff");
+    font-display: swap;
+}
+
+:root {
+    --georgian-red: #da291c;
+    --georgian-red-light: rgba(212, 26, 13, 0.6);
+    --georgian-red-dark: rgba(119, 9, 1, 0.8);
+    --font-color: #d13a3a;
+    --font-color-inverse: #ffffff;
+    --card-bg-color: #ffffff;
+    --shadow-color: 4deg 76% 29%;
+    --shadow-elevation-low:
+        0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+        0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+        1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium:
+        0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+        0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+        2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+        5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+    --shadow-elevation-high:
+        0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+        1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+        2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+        4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+        7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+        11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+        17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+        25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+.page {
+    margin: 0;
+    font-family: "Noto Sans Georgian", sans-serif;
+    background-color: var(--georgian-red);
+}
+
+.page__swiper {
+    padding: 60px 0;
+}
+
+.page__title {
+    font-family: 'Noto Sans Georgian', Arial, sans-serif;
+    font-size: 48px;
+    color: var(--font-color-inverse);
+    text-align: center;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.card-wrapper {
+    perspective: 1000px;
+}
+
+/* Card */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 470px;
+    padding: 30px;
+    font-family: 'Noto Sans Georgian', Arial, sans-serif;
+    background-color: var(--card-bg-color);
+    border-radius: 24px;
+    box-shadow: var(--shadow-elevation-medium);
+
+    transition: transform 400ms, background-color 200ms 300ms;
+    gap: 10px;
+    transform-style: preserve-3d;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.card--flipped {
+    transform: rotateY(180deg);
+}
+
+.card__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: auto;
+    gap: 20px;
+}
+
+.card__face {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border-radius: 24px;
+    backface-visibility: hidden;
+    gap: 10px;
+}
+
+.card__face--failed {
+    background-color: #ffe100;
+}
+
+.card__face--success {
+    background-color: #81ddff;
+}
+
+.card__face--front {
+    justify-content: flex-start;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+}
+
+.card--error {
+    animation: error 300ms cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.card__letter {
+    margin: 0;
+    font-size: 190px;
+    color: var(--font-color);
+}
+
+.card__letter-name {
+    margin: 0;
+    font-size: 60px;
+    line-height: 1;
+    color: var(--font-color);
+}
+
+.card__letter-ipa {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-size: 40px;
+    color: var(--font-color);
+    gap: 20px;
+}
+
+.card__letter-ipa::before {
+    content: "[";
+}
+
+.card__letter-ipa::after {
+    content: "]";
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+    gap: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-size: 24px;
+    color: var(--font-color);
+    cursor: pointer;
+    background-color: var(--card-bg-color);
+    border: none;
+    border: 2px solid var(--georgian-red);
+    border-radius: 18px;
+}
+
+/* Guess */
+
+.guess {
+    padding: 8px 16px;
+    font-size: 24px;
+    color: #d13a3a;
+    text-align: center;
+    text-transform: lowercase;
+    border: none;
+    border: 2px solid var(--georgian-red-light);
+    border-radius: 20px;
+}
+
+.guess::placeholder {
+    color: var(--georgian-red-light);
+    text-transform: none;
+}
+
+.guess:focus,
+.button:focus {
+    outline: 2px solid var(--georgian-red-dark);
+    outline-offset: 3px;
+}
+
+.guess:focus::placeholder {
+    color: transparent;
+}
+
+/* Reset Button */
+
+.reset-button {
+    margin: 0 auto;
+}
+
+/* Stats */
+
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--font-color-inverse);
+    gap: 20px;
+}
+
+.stats__correct,
+.stats__mistakes {
+    margin: 0;
+}
+
+/* Animation */
+
+@keyframes error {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(5px); }
+    40% { transform: translateX(-5px); }
+    60% { transform: translateX(5px); }
+    80% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+   }
+
+/* Swiper setttings and overrides */
+
+.swiper-pagination-progressbar {
+    height: 5px ;
+    background-color: var(--card-bg-color);
+}
+
+.swiper-pagination-progressbar-fill {
+    background-color: var(--georgian-red-dark) !important;
+}
+
+.swiper-slide-active {
+    transform: scale(1.1) !important;
+}
+
+.swiper-slide {
+    transition: 200ms ease-in-out !important;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer__copyright {
+    color: var(--font-color-inverse);
+    text-align: center;
+}
+
+.footer__link {
+    color: var(--font-color-inverse);
+}

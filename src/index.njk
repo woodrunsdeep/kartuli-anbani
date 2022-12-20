@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kartuli Anbani</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇬🇪</text></svg>">
+        <link rel="stylesheet" href="out.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="preload" href="/assets/fonts/NotoSansGeorgian-Regular.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/assets/fonts/NotoSansGeorgian-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+    </head>
+    <body class="page">
+        <main class="page__main">
+            <h1 class="page__title">Kartuli Anbani</h1>
+            <div class="page__swiper swiper">
+                <div class="swiper-wrapper">
+                    {% for letter in alphabet %}
+                        <div class="swiper-slide">
+                            <div class="card-wrapper">
+                                <div class="card" data-id="{{ letter.id }}">
+                                    <div class="card__face card__face--front">
+                                        <p class="card__letter">{{ letter.georgian }}</p>
+                                        <form class="card__form" data-form-id="{{ letter.id }}">
+                                            <input class="card__guess guess" type="text" placeholder="Ваш ответ" required maxlength="5">
+                                            <button class="card__button button" type="submit">Ответить</button>
+                                        </form>
+                                    </div>
+                                    <div class="card__face card__face--back">
+                                        <p class="card__letter">{{ letter.georgian }}</p>
+                                        <p class="card__letter-name">{{ letter.name.ru }}</p>
+                                        <p class="card__letter-ipa">{{ letter.ipa }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="page__stats stats">
+                <p class="stats__mistakes">Ошибок: <span class="mistakes">0</span></p>
+                <p class="stats__correct">Правильно: <span class="correct">0</span></p>
+            </div>
+            <button class="button reset-button">Сбросить результаты</button>
+            {% include "./_includes/partials/footer.njk" %}
+        </main>
+        <script src="/script.min.js" type="module"></script>
+    </body>
+</html>

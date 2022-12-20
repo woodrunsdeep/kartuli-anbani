@@ -1,0 +1,22 @@
+{
+  "name": "kartuli-anbani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:js": "esbuild ./src/js/index.js --bundle --minify --outfile=script.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rm -rf dist && npm run build:js && npx eleventy --serve --watch",
+    "build": "rm -rf dist && npm run build:js && npx eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  },
+  "dependencies": {
+    "esbuild": "0.16.10",
+    "swiper": "^8.4.5"
+  }
+}
