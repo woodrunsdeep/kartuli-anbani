@@ -1,5 +1,5 @@
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPassthroughCopy('out.css');
+    eleventyConfig.addPassthroughCopy('script.min.css');
     eleventyConfig.addPassthroughCopy('src/css/*.css');
     eleventyConfig.addPassthroughCopy('script.min.js');
     eleventyConfig.addPassthroughCopy('src/assets/fonts/**/*');
