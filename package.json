@@ -4,19 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:js": "esbuild ./src/js/index.js --bundle --minify --outfile=script.min.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "rm -rf dist && npm run build:js && npx eleventy --serve --watch",
-    "build": "rm -rf dist && npm run build:js && npx eleventy"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
-  },
   "dependencies": {
-    "esbuild": "0.16.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "swiper": "^8.4.5"
+  },
+   "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "vite": "^4.1.0"
   }
 }
