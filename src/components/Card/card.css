@@ -1,0 +1,99 @@
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 440px;
+    padding: 30px;
+
+    font-family: 'Noto Sans Georgian', Arial, sans-serif;
+
+    background-color: var(--card-bg-color);
+    border-radius: 24px;
+    box-shadow: var(--shadow-elevation-medium);
+    transform-style: preserve-3d;
+    cursor: pointer;
+
+    transition: transform 400ms, background-color 200ms 300ms;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.card--error {
+    animation: error 300ms cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.card--flipped {
+    transform: rotateY(180deg);
+}
+
+.card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.card__face {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    background-color: var(--card-bg-color);
+    border-radius: 24px;
+    backface-visibility: hidden;
+}
+
+.card__face--failed {
+    background-color: #ffe100;
+}
+
+.card__face--success {
+    background-color: #81ddff;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+}
+
+.card__letter {
+    margin: 0;
+
+    color: var(--font-color);
+    font-size: 190px;
+}
+
+.card__letter-name {
+    margin: 0;
+
+    color: var(--font-color);
+    font-size: 60px;
+    line-height: 1;
+}
+
+.card__letter-ipa {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0;
+
+    color: var(--font-color);
+    font-size: 40px;
+}
+
+.card__letter-ipa::before {
+    content: "[";
+}
+
+.card__letter-ipa::after {
+    content: "]";
+}
