@@ -1,0 +1,31 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 8px 16px;
+
+    color: var(--font-color);
+    font-size: 18px;
+
+    background-color: var(--card-bg-color);
+    border: none;
+    border-radius: 18px;
+    box-shadow: var(--shadow-elevation-medium);
+    cursor: pointer;
+
+    transition: transform 100ms ease-in-out;
+}
+
+.button:active {
+    color: #fff;
+
+    background-color: var(--georgian-red-dark);
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.button:focus {
+    outline: 2px solid var(--georgian-red-dark);
+    outline-offset: 3px;
+}
