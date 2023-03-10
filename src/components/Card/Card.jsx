@@ -1,6 +1,9 @@
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 import './card.css';
 
-function Card({ letter, language }) {
+function Card({ letter }) {
+  const language = useContext(LanguageContext);
   function flip(evt) {
     evt.currentTarget.classList.toggle('card--flipped');
   }

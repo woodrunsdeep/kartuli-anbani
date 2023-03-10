@@ -1,7 +1,10 @@
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 import './footer.css';
 
-function Footer({ lang }) {
-  const author = lang === 'en' ? 'Gleb Dmitriev' : 'Глеб Дмитриев';
+function Footer() {
+  const language = useContext(LanguageContext);
+  const author = language === 'en' ? 'Gleb Dmitriev' : 'Глеб Дмитриев';
   const year = (new Date()).getFullYear();
   const copyRight = `© ${author} - ${year}`;
   return (
@@ -13,7 +16,7 @@ function Footer({ lang }) {
         target="_blank"
         rel="noreferrer"
       >
-        {lang === 'en' ? 'Code on Github' : 'Код на Гитхабе'}
+        {language === 'en' ? 'Code on Github' : 'Код на Гитхабе'}
       </a>
     </footer>
   );

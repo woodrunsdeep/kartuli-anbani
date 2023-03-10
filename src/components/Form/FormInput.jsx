@@ -1,4 +1,8 @@
-function FormInput({ onInputChange, language }) {
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
+
+function FormInput({ onInputChange }) {
+  const language = useContext(LanguageContext);
   return (
     <label className="form__label">
       <input

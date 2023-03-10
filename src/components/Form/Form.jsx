@@ -1,9 +1,13 @@
+import { useContext } from 'react';
 import Button from '../Button/Button';
 import FormInput from './FormInput';
 import FormRadioGroup from './FormRadioGroup';
 import './form.css';
+import LanguageContext from '../../context/LanguageContext';
 
-function Form({ inputMode, options, language }) {
+function Form({ inputMode, options }) {
+  const language = useContext(LanguageContext);
+
   function handleSubmit(evt) {
     evt.preventDefault(); // submit handler draft
   }
@@ -11,9 +15,9 @@ function Form({ inputMode, options, language }) {
     <form className="form" onSubmit={handleSubmit}>
       <fieldset className="form__options">
         {inputMode === 'text' ? (
-          <FormInput language={language} />
+          <FormInput />
         ) : (
-          <FormRadioGroup options={options} language={language} />
+          <FormRadioGroup options={options} />
         )}
       </fieldset>
       <Button className="form__button" type="submit">

@@ -1,10 +1,10 @@
 import ButtonRadio from './FormRadio';
 
-function FormRadioGroup({ options, language }) {
+function FormRadioGroup({ options }) {
   return (
     <div className="form__radio-group">
       {options.map((radio) => (
-        <ButtonRadio radio={radio} key={radio.id} language={language} />
+        <ButtonRadio radio={radio} key={radio.id} />
       ))}
     </div>
   );

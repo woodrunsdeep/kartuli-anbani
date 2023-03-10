@@ -4,7 +4,7 @@ import 'swiper/css';
 import './swiper-overrides.css';
 import Card from '../Card/Card';
 
-function Carousel({ deck, language }) {
+function Carousel({ deck }) {
   return (
     <Swiper
       className="swiper"
@@ -24,7 +24,7 @@ function Carousel({ deck, language }) {
       {deck.map((letter) => (
         <SwiperSlide key={letter.id}>
           <div className="swiper-slide-transform">
-            <Card letter={letter} language={language} />
+            <Card letter={letter} />
           </div>
         </SwiperSlide>
       ))}

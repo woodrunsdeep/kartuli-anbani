@@ -1,4 +1,8 @@
-function FormRadio({ radio, language }) {
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
+
+function FormRadio({ radio }) {
+  const language = useContext(LanguageContext);
   return (
     <div>
       <input

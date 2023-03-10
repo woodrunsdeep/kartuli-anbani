@@ -5,6 +5,7 @@ import Button from './components/Button/Button';
 import Settings from './components/Settings/Settings';
 import Controls from './components/Controls/Controls';
 import Footer from './components/Footer/Footer';
+import LanguageContext from './context/LanguageContext';
 
 import alphabet from './_data/alphabet.json';
 
@@ -15,9 +16,7 @@ function App() {
   const [inputMode, setInputMode] = useState('radio');
   // eslint-disable-next-line no-unused-vars
   const [optionsQuantity, setOptionsQuantity] = useState(6);
-  const [lang, setLang] = useState(navigator.language.slice(0, 2));
-  // eslint-disable-next-line no-unused-vars
-  const [currentCard, setCurrentCard] = useState(0);
+  const [language, setLanguage] = useState(navigator.language.slice(0, 2));
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
@@ -34,42 +33,39 @@ function App() {
     initOptions(deck);
   }, deck);
 
-  const changeLang = () => setLang(lang === 'en' ? 'ru' : 'en');
-  const restartGame = () => setDeck(shuffle(deck));
+  const changeLang = () => setLanguage(language === 'en' ? 'ru' : 'en');
 
   const changeMode = ({ target }) => setInputMode(target.dataset.mode === 'radio' ? 'text' : 'radio');
 
   return (
     <div className="App">
-      <Carousel
-        deck={deck}
-        language={lang}
-      />
-      <Controls>
-        <Settings>
-          <Button
-            className="settings__button"
+      <LanguageContext.Provider value={language}>
+        <Carousel deck={deck} />
+        <Controls>
+          <Settings>
+            <Button
+              className="settings__button"
+              inputMode={inputMode}
+              handleClick={changeMode}
+            >
+              {inputMode === 'radio' ? '🔘' : '⌨️'}
+            </Button>
+            <Button className="settings__button" handleClick={restartGame}>
+              ♻️
+            </Button>
+            <Button className="settings__button" handleClick={changeLang}>
+              {language === 'en' ? '🇬🇧' : '🇷🇺'}
+            </Button>
+          </Settings>
+          <Form
+            currentCard={currentCard}
+            options={options}
+            deck={deck}
             inputMode={inputMode}
-            handleClick={changeMode}
-          >
-            {inputMode === 'radio' ? '🔘' : '⌨️'}
-          </Button>
-          <Button className="settings__button" handleClick={restartGame}>
-            ♻️
-          </Button>
-          <Button className="settings__button" handleClick={changeLang}>
-            {lang === 'en' ? '🇬🇧' : '🇷🇺'}
-          </Button>
-        </Settings>
-        <Form
-          currentCard={currentCard}
-          options={options}
-          deck={deck}
-          inputMode={inputMode}
-          language={lang}
-        />
-      </Controls>
-      <Footer lang={lang} />
+          />
+        </Controls>
+        <Footer />
+      </LanguageContext.Provider>
     </div>
   );
 }
