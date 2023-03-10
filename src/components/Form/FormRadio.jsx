@@ -11,6 +11,7 @@ function FormRadio({ radio }) {
         name="option"
         id={radio.id}
         value={radio.name[language]}
+        required
       />
       <label htmlFor={radio.id} className="form__radio-label button">
         {radio.name[language]}
