@@ -17,6 +17,7 @@ function App() {
   const [optionsQuantity, setOptionsQuantity] = useState(6);
   const [language, setLanguage] = useState(navigator.language.slice(0, 2));
   const [options, setOptions] = useState([]);
+  const [results, setResults] = useState([]);
   const currentCard = results.length;
 
   const generateOptions = async (cards) => {
@@ -44,6 +45,11 @@ function App() {
   }, [deck, currentCard, optionsQuantity]);
 
   const changeLang = () => setLanguage(language === 'en' ? 'ru' : 'en');
+
+  const restartGame = () => {
+    setResults([]);
+    setDeck((prevDeckState) => shuffle(prevDeckState));
+  };
 
   const changeMode = ({ target }) => setInputMode(target.dataset.mode === 'radio' ? 'text' : 'radio');
 
