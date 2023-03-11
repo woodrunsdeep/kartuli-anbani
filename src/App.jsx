@@ -32,6 +32,13 @@ function App() {
     }
   };
 
+  const handleOptionsQChange = (evt) => {
+    const newOptionsQty = +evt.target.value;
+    if (inputMode === 'radio' && newOptionsQty !== optionsQuantity) {
+      setOptionsQuantity(newOptionsQty);
+    }
+  };
+
   useEffect(() => {
     generateOptions(deck);
   }, [deck, currentCard, optionsQuantity]);
@@ -59,6 +66,14 @@ function App() {
             <Button className="settings__button" onClick={changeLang}>
               {language === 'en' ? '🇬🇧' : '🇷🇺'}
             </Button>
+            {/* for debug only */}
+            <Button className="settings__button" onClick={handleOptionsQChange} value="3">3</Button>
+            <Button className="settings__button" onClick={handleOptionsQChange} value="4">4</Button>
+            <Button className="settings__button" onClick={handleOptionsQChange} value="5">5</Button>
+            <Button className="settings__button" onClick={handleOptionsQChange} value="6">6</Button>
+            <Button className="settings__button" onClick={handleOptionsQChange} value="7">7</Button>
+            <Button className="settings__button" onClick={handleOptionsQChange} value="8">8</Button>
+            <Button className="settings__button" onClick={handleOptionsQChange} value="9">9</Button>
           </Settings>
           <Form
             currentCard={currentCard}
