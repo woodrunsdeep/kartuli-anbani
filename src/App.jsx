@@ -14,7 +14,6 @@ import { shuffle } from './utils/utils';
 function App() {
   const [deck, setDeck] = useState(shuffle(alphabet));
   const [inputMode, setInputMode] = useState('radio');
-  // eslint-disable-next-line no-unused-vars
   const [optionsQuantity, setOptionsQuantity] = useState(6);
   const [language, setLanguage] = useState(navigator.language.slice(0, 2));
   const [options, setOptions] = useState([]);
