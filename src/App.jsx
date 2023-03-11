@@ -45,15 +45,15 @@ function App() {
           <Settings>
             <Button
               className="settings__button"
-              inputMode={inputMode}
-              handleClick={changeMode}
+              data-mode={inputMode}
+              onClick={changeMode}
             >
               {inputMode === 'radio' ? '🔘' : '⌨️'}
             </Button>
-            <Button className="settings__button" handleClick={restartGame}>
+            <Button className="settings__button" onClick={restartGame}>
               ♻️
             </Button>
-            <Button className="settings__button" handleClick={changeLang}>
+            <Button className="settings__button" onClick={changeLang}>
               {language === 'en' ? '🇬🇧' : '🇷🇺'}
             </Button>
           </Settings>

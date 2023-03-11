@@ -1,15 +1,14 @@
 import './button.css';
 
 function Button({
-  type, className, children, handleClick, inputMode,
+  type, className, children, ...props
 }) {
   const classList = className ? `${className} button` : 'button';
   return (
     <button
-      type={type === 'button' ? 'button' : 'submit'}
+      type={type || 'button'}
       className={classList}
-      onClick={handleClick}
-      data-mode={inputMode}
+      {...props}
     >
       {children}
     </button>
