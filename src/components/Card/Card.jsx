@@ -4,12 +4,9 @@ import './card.css';
 
 function Card({ letter }) {
   const language = useContext(LanguageContext);
-  function flip(evt) {
-    evt.currentTarget.classList.toggle('card--flipped');
-  }
 
   return (
-    <div className="card" data-id={letter.id} onClick={flip}>
+    <div className="card" data-id={letter.id}>
       <div className="card__face card__face--front">
         <p className="card__letter">{letter.georgian}</p>
       </div>
