@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     min-height: 48px;
+    margin: 0;
     padding: 8px 16px;
 
     color: var(--font-color);
@@ -15,6 +16,7 @@
     cursor: pointer;
 
     transition: transform 100ms ease-in-out;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .button:active {
