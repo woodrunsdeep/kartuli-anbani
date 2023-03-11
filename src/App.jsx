@@ -86,6 +86,8 @@ function App() {
             options={options}
             deck={deck}
             inputMode={inputMode}
+            setResults={setResults}
+            answer={deck[currentCard]}
           />
         </Controls>
         <Footer />
