@@ -1,7 +1,7 @@
 .controls {
     display: flex;
     gap: 30px;
-    width: max-content;
+    max-width: 370px;
     margin: 0 auto;
     padding: 10px 8px;
 }
