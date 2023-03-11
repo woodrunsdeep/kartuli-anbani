@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import LanguageContext from '../../context/LanguageContext';
 
-function FormInput({ onInputChange }) {
+function FormInput() {
   const language = useContext(LanguageContext);
   const labelText = language === 'en' ? 'Enter letter' : 'Введите букву';
   return (
