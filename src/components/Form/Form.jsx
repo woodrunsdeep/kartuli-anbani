@@ -12,7 +12,7 @@ function Form({ inputMode, options }) {
     evt.preventDefault(); // submit handler draft
   }
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit} autoComplete="off">
       <fieldset className="form__options">
         {inputMode === 'text' ? (
           <FormInput />
