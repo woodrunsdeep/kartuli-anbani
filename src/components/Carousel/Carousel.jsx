@@ -11,6 +11,7 @@ function Carousel({ deck }) {
       spaceBetween={40}
       centeredSlides
       slideToClickedSlide
+      speed={600}
       slidesPerView={1.5}
       breakpoints={{
         768: {
