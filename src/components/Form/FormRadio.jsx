@@ -4,10 +4,10 @@ import LanguageContext from '../../context/LanguageContext';
 function FormRadio({ radio }) {
   const language = useContext(LanguageContext);
   return (
-    <div className="form__radio">
+    <div className="form__radio-box">
       <input
         type="radio"
-        className="visually-hidden"
+        className="form__radio visually-hidden"
         name="option"
         id={radio.id}
         value={radio.name[language]}
