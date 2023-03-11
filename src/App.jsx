@@ -18,20 +18,24 @@ function App() {
   const [optionsQuantity, setOptionsQuantity] = useState(6);
   const [language, setLanguage] = useState(navigator.language.slice(0, 2));
   const [options, setOptions] = useState([]);
+  const currentCard = results.length;
+
+  const generateOptions = async (cards) => {
+    if (inputMode === 'radio') {
+      const currentCardId = cards[currentCard].id;
+      const filteredCards = shuffle(cards.filter((card) => card.id !== currentCardId));
+      const optionsToShuffle = [
+        cards[currentCard],
+        ...filteredCards.slice(0, optionsQuantity - 1),
+      ];
+      const shuffledOptions = shuffle(optionsToShuffle);
+      setOptions(shuffledOptions);
+    }
+  };
 
   useEffect(() => {
-    const initOptions = async (cards) => {
-      setOptions(
-        shuffle([
-          cards[currentCard],
-          ...cards
-            .filter((letter) => letter.name[lang] !== cards[currentCard].name[lang])
-            .slice(0, optionsQuantity - 1),
-        ]),
-      );
-    };
-    initOptions(deck);
-  }, deck);
+    generateOptions(deck);
+  }, [deck, currentCard, optionsQuantity]);
 
   const changeLang = () => setLanguage(language === 'en' ? 'ru' : 'en');
 
