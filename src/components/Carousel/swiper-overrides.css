@@ -4,6 +4,10 @@
     min-height: 560px;
 }
 
+.swiper-slide {
+  transition: 450ms ease-in-out;
+}
+
 .swiper-slide-transform {
     perspective: 1000px;
 }
