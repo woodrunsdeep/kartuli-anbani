@@ -68,8 +68,14 @@
 .card__letter {
     margin: 0;
 
-    color: var(--font-color);
+    color: transparent;
     font-size: 190px;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+
+    background-color: var(--georgian-red);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
 }
 
 .card__letter-name {
