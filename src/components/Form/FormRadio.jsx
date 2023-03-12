@@ -1,20 +1,16 @@
-import { useContext } from 'react';
-import LanguageContext from '../../context/LanguageContext';
-
-function FormRadio({ radio }) {
-  const language = useContext(LanguageContext);
+function FormRadio({ value, id, name }) {
   return (
     <div className="form__radio-box">
       <input
         type="radio"
         className="form__radio visually-hidden"
-        name="option"
-        id={radio.id}
-        value={radio.name[language]}
+        name={name}
+        id={id}
+        value={value}
         required
       />
-      <label htmlFor={radio.id} className="form__radio-label button">
-        {radio.name[language]}
+      <label htmlFor={id} className="form__radio-label button">
+        {value}
       </label>
     </div>
   );
