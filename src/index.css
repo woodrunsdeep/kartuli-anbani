@@ -21,6 +21,8 @@
     --georgian-red-light: rgba(212, 26, 13, 0.6);
     --georgian-red-dark: rgba(119, 9, 1, 0.8);
     --font-color: #d13a3a;
+    --font-color-inverse: #feffe3;
+    --card-bg-color: #feffe3;
     --color-success: #d6e153;
     --color-failed: #ffbd1f;
     --shadow-color: 5deg 79% 22%;
