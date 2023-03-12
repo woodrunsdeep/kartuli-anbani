@@ -78,3 +78,8 @@
 
     background-color: var(--georgian-red-dark)
 }
+
+.form__radio:focus ~ .form__radio-label {
+  outline: 2px solid var(--georgian-red-dark);
+  outline-offset: 3px;
+}
