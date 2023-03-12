@@ -13,7 +13,7 @@
 
     background-color: var(--card-bg-color);
     border-radius: 24px;
-    box-shadow: var(--shadow-elevation-medium);
+    box-shadow: var(--shadow-elevation-low);
     transform-style: preserve-3d;
     cursor: pointer;
 

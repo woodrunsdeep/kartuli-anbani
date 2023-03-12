@@ -12,7 +12,7 @@
     background-color: var(--card-bg-color);
     border: none;
     border-radius: 18px;
-    box-shadow: var(--shadow-elevation-medium);
+    box-shadow: var(--shadow-elevation-low);
     cursor: pointer;
 
     transition: transform 100ms ease-in-out;
