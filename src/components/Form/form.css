@@ -72,7 +72,7 @@
 }
 
 .form__radio:checked ~ .form__radio-label {
-    color: #fff;
+    color: var(--font-color-inverse);
 
     background-color: var(--georgian-red-dark)
 }

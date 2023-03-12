@@ -54,11 +54,11 @@
 }
 
 .card__face--failed {
-    background-color: #ffe100;
+    background-color: var(--color-failed);
 }
 
 .card__face--success {
-    background-color: #81ddff;
+    background-color: var(--color-success);
 }
 
 .card__face--back {
