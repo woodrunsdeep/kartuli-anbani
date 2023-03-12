@@ -12,7 +12,7 @@ import alphabet from './_data/alphabet.json';
 import { shuffle } from './utils/utils';
 
 function App() {
-  const [deck, setDeck] = useState(shuffle(alphabet));
+  const [deck, setDeck] = useState(() => shuffle(alphabet));
   const [inputMode, setInputMode] = useState('radio');
   const [optionsQuantity, setOptionsQuantity] = useState(6);
   const [language, setLanguage] = useState(navigator.language.slice(0, 2));
