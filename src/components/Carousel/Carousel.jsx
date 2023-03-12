@@ -1,10 +1,20 @@
+import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
 import './swiper-overrides.css';
 import Card from '../Card/Card';
 
-function Carousel({ deck }) {
+function Carousel({ deck, currentSlide, results }) {
+  const slideDelay = 800;
+
+  useEffect(() => {
+    setTimeout(() => {
+      const { swiper } = document.querySelector('.swiper');
+      swiper.slideTo(currentSlide);
+    }, slideDelay);
+  }, [currentSlide]);
+
   return (
     <Swiper
       className="swiper"
@@ -22,10 +32,10 @@ function Carousel({ deck }) {
         },
       }}
     >
-      {deck.map((letter) => (
+      {deck.map((letter, index) => (
         <SwiperSlide key={letter.id}>
           <div className="swiper-slide-transform">
-            <Card letter={letter} />
+            <Card letter={letter} isCorrect={results[index].isAnswerCorrect} />
           </div>
         </SwiperSlide>
       ))}

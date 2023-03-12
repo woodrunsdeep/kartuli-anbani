@@ -17,8 +17,15 @@ function App() {
   const [optionsQuantity, setOptionsQuantity] = useState(6);
   const [language, setLanguage] = useState(navigator.language.slice(0, 2));
   const [options, setOptions] = useState([]);
-  const [results, setResults] = useState([]);
-  const currentCard = results.length;
+  const [currentCard, setCurrentCard] = useState(0);
+
+  const initialResults = (cards) => (
+    cards.map((card) => ({
+      isAnswerCorrect: null,
+      letter: card.name[language],
+    })));
+
+  const [results, setResults] = useState(() => initialResults(deck));
 
   const generateOptions = async (cards) => {
     if (inputMode === 'radio') {
@@ -56,7 +63,7 @@ function App() {
   return (
     <div className="App">
       <LanguageContext.Provider value={language}>
-        <Carousel deck={deck} />
+        <Carousel deck={deck} results={results} currentSlide={currentCard} />
         <Controls>
           <Settings>
             <Button
@@ -88,6 +95,7 @@ function App() {
             inputMode={inputMode}
             setResults={setResults}
             answer={deck[currentCard]}
+            setCurrentCard={setCurrentCard}
           />
         </Controls>
         <Footer />
