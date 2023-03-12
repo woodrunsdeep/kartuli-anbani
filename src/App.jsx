@@ -53,8 +53,9 @@ function App() {
 
   const changeLang = () => setLanguage(language === 'en' ? 'ru' : 'en');
 
-  const restartGame = () => {
-    setResults([]);
+  const restartGame = async () => {
+    setResults(() => initialResults(deck));
+    setCurrentCard(0);
     setDeck((prevDeckState) => shuffle(prevDeckState));
   };
 
