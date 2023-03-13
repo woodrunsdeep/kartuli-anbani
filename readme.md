@@ -14,5 +14,6 @@ I will appreciate any feedback from anyone and will try to improve accordingly.
 
 Available in Russian (English comming soon)
 
-Built with 11ty
-Hosted on Netlify
+Built with **11ty**  
+Hosted on **Netlify**  
+This project is tested with **BrowserStack**  
