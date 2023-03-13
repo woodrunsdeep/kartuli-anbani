@@ -1,0 +1,85 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.form__radio-group {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: stretch;
+
+    font-size: 18px;
+}
+
+.form__radio-box {
+  display: flex;
+  flex-basis: 84px;
+  flex-grow: 1;
+}
+
+.form__radio-label {
+  flex-grow: 1;
+}
+
+.form__button {
+    width: 100%;
+
+    font-size: 24px;
+}
+
+.form__options {
+    display: flex;
+    gap: 20px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+}
+
+.form__input {
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    padding: 8px 16px;
+
+    color: var(--font-color);
+    font-size: 24px;
+    text-align: center;
+    text-transform: lowercase;
+
+    background-color: var(--card-bg-color);
+
+    border: none;
+    border-radius: 18px;
+    box-shadow: var(--shadow-elevation-low);
+}
+
+.form__input::placeholder {
+    color: var(--georgian-red-light);
+    text-transform: none;
+}
+
+.form__input:focus {
+    outline: 2px solid var(--georgian-red-dark);
+    outline-offset: 3px;
+}
+
+.form__input:focus::placeholder {
+    color: transparent;
+}
+
+.form__radio:checked ~ .form__radio-label {
+    color: var(--font-color-inverse);
+
+    background-color: var(--georgian-red-dark)
+}
+
+.form__radio:focus ~ .form__radio-label {
+  outline: 2px solid var(--georgian-red-dark);
+  outline-offset: 3px;
+}

@@ -1,0 +1,77 @@
+@font-face {
+    font-weight: 400;
+    font-family: "Noto Sans Georgian";
+    font-style: normal;
+    src: url("./assets/fonts/NotoSansGeorgian-Regular.woff2") format("woff2"),
+        url("./assets/fonts/NotoSansGeorgian-Regular.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: "Noto Sans Georgian";
+    font-style: normal;
+    src: url("./assets/fonts/NotoSansGeorgian-Bold.woff2") format("woff2"),
+        url("./assets/fonts/NotoSansGeorgian-Bold.woff") format("woff");
+    font-display: swap;
+}
+
+:root {
+    --georgian-red: #da291c;
+    --georgian-red-light: rgba(212, 26, 13, 0.6);
+    --georgian-red-dark: rgba(119, 9, 1, 0.8);
+    --font-color: #d13a3a;
+    --font-color-inverse: #feffe3;
+    --card-bg-color: #feffe3;
+    --color-success: #d6e153;
+    --color-failed: #ffbd1f;
+    --shadow-color: 5deg 79% 22%;
+    --shadow-elevation-low:
+      0.7px 0.8px 1.1px hsl(var(--shadow-color) / 0.62),
+      1.2px 1.3px 1.8px -1.7px hsl(var(--shadow-color) / 0.51),
+      3.3px 3.6px 4.9px -3.3px hsl(var(--shadow-color) / 0.41);
+    --shadow-elevation-medium:
+      0.7px 0.8px 1.1px hsl(var(--shadow-color) / 0.65),
+      2.2px 2.4px 3.2px -1.1px hsl(var(--shadow-color) / 0.57),
+      6.2px 6.9px 9.3px -2.2px hsl(var(--shadow-color) / 0.48),
+      16.5px 18.1px 24.4px -3.3px hsl(var(--shadow-color) / 0.4);
+    --shadow-elevation-high:
+      0.7px 0.8px 1.1px hsl(var(--shadow-color) / 0.69),
+      4.3px 4.8px 6.4px -0.6px hsl(var(--shadow-color) / 0.64),
+      9.3px 10.2px 13.8px -1.1px hsl(var(--shadow-color) / 0.59),
+      18.2px 19.9px 26.9px -1.7px hsl(var(--shadow-color) / 0.54),
+      33.5px 36.8px 49.6px -2.2px hsl(var(--shadow-color) / 0.49),
+      57.9px 63.7px 85.9px -2.8px hsl(var(--shadow-color) / 0.44),
+      94px 103.3px 139.3px -3.3px hsl(var(--shadow-color) / 0.39);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.page {
+    margin: 0;
+    padding-bottom: 20px;
+
+    font-family: "Noto Sans Georgian", sans-serif;
+
+    background-color: var(--georgian-red);
+}
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+  }
