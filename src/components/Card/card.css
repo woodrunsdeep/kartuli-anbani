@@ -17,7 +17,7 @@
     transform-style: preserve-3d;
     cursor: pointer;
 
-    transition: transform 400ms, background-color 200ms 300ms;
+    transition: transform 400ms;
     -webkit-tap-highlight-color: transparent;
 }
 
