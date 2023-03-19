@@ -32,7 +32,10 @@
 
 .form__options {
     display: flex;
-    gap: 20px;
+    flex-grow: 1;
+    gap: 10px;
+    justify-content: space-between;
+
     height: auto;
 }
 
