@@ -38,7 +38,7 @@ function Settings() {
       <h2 className="form__title">Game Settings</h2>
       <fieldset>
         <div className="form__options">
-          <legend>Language</legend>
+          <legend className="form__legend">Language</legend>
           <select name="language" id="language" defaultValue={language}>
             {languages.map((l) => (
               <option value={l} key={l}>{l}</option>
@@ -47,8 +47,8 @@ function Settings() {
         </div>
       </fieldset>
       <fieldset>
-        <div className="form__options">
-          <legend>Input Mode</legend>
+        <div className="form__options form__options--row">
+          <legend className="form__legend">Input Mode</legend>
           {Object.values(inputModes).map((mode) => (
             <FormRadio
               value={mode.type}
@@ -63,7 +63,7 @@ function Settings() {
         </div>
       </fieldset>
       <fieldset className="form__radio-options" disabled={inputMode === 'text' ? true : null}>
-        <legend>Options Number</legend>
+        <legend className="form__legend">Options Number</legend>
         <FormRange
           min={inputModes.radio.min}
           max={inputModes.radio.max}
@@ -74,7 +74,7 @@ function Settings() {
       </fieldset>
       <fieldset className="form__setting">
         <div className="form__options form__options--column">
-          <legend>Deck Order</legend>
+          <legend className="form__legend">Deck Order</legend>
           <div className="form__set">
             {Object.values(deckOrderOptions).map((option) => (
               <FormRadio
@@ -91,7 +91,7 @@ function Settings() {
       </fieldset>
       <fieldset className="form__setting">
         <div className="form__options form__options--column">
-          <legend>Theme</legend>
+          <legend className="form__legend">Theme</legend>
           <div className="form__set">
             {Object.values(themes).map((option) => (
               <FormRadio
@@ -106,7 +106,7 @@ function Settings() {
           </div>
         </div>
       </fieldset>
-      <div className="form__actions">
+      <div className="form__actions form__set">
         <Button type="submit">Save</Button>
         <Button type="reset">Reset</Button>
         <Button onClick={() => dispatch(setVisibility(false))}>Cancel</Button>
