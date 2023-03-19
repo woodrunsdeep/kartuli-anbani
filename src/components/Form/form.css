@@ -36,6 +36,14 @@
     height: auto;
 }
 
+.form__options--column {
+  flex-direction: column;
+}
+
+.form__options--row {
+  align-items: center;
+}
+
 .form__input {
     width: 100%;
     min-height: 48px;
