@@ -15,20 +15,9 @@ function Form({
 
   function handleSubmit(evt) {
     evt.preventDefault(); // submit handler draft
-    attemptsLeft -= 1;
-
-    if (attemptsLeft <= 0) {
-      evt.target.reset();
-      setResults((prevState) => {
-        const newResults = [...prevState];
-        newResults[currentCard].isAnswerCorrect = false;
-        return newResults;
-      });
-      setCurrentCard((prevCard) => prevCard + 1);
-      return;
-    }
-
-    const guess = Object.fromEntries(new FormData(evt.target)).option.toLowerCase().trim();
+    const guess = Object.fromEntries(new FormData(evt.target))
+      .option.toLowerCase()
+      .trim();
 
     if (guess === answer.name[language]) {
       setResults((prevState) => {
@@ -42,6 +31,18 @@ function Form({
       return;
     }
 
+    if (attemptsLeft <= 1) {
+      evt.target.reset();
+      setResults((prevState) => {
+        const newResults = [...prevState];
+        newResults[currentCard].isAnswerCorrect = false;
+        return newResults;
+      });
+      setCurrentCard((prevCard) => prevCard + 1);
+      return;
+    }
+
+    attemptsLeft -= 1;
     evt.target.reset();
   }
 
