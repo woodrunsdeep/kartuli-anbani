@@ -78,3 +78,63 @@
   outline: 2px solid var(--georgian-red-dark);
   outline-offset: 3px;
 }
+
+.form__radio-options {
+  transition: opacity 250ms ease-in-out;
+}
+
+.form__radio-options:disabled {
+  opacity: 0;
+}
+
+.form__actions {
+  margin-top: 20px;
+}
+
+.form__range {
+  margin: 0;
+}
+
+.form__range-list {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+
+  padding: 0 5px;
+}
+
+.form__range-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 15px;
+}
+
+.form__title {
+  margin: 0;
+}
+
+.form__legend {
+  flex-shrink: 0;
+}
+
+.form__settings {
+  padding: 30px 20px;
+
+  color: var(--font-color-inverse);
+
+  background-color: var(--georgian-red);
+  border: 4px solid var(--georgian-red-dark);
+  border-radius: 20px;
+}
+
+.form__setting-title {
+  text-transform: capitalize;
+}
+
+.form__set {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+}
