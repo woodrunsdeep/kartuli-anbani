@@ -5,3 +5,13 @@
     margin: 0 auto;
     padding: 10px 8px;
 }
+
+.controls__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.controls__form {
+  flex-grow: 1;
+}
