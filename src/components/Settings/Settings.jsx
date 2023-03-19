@@ -1,7 +1,123 @@
+import { useSelector, useDispatch } from 'react-redux';
+import Button from '../Button/Button';
+import FormRadio from '../Form/FormRadio';
+import FormRange from '../Form/FormRange';
 import './settings.css';
+import {
+  setInputMode,
+  selectSettings,
+  setVisibility,
+  saveSettings,
+  reset,
+} from '../../features/settings/settingsSlice';
 
-function Settings({ children }) {
-  return <div className="settings">{children}</div>;
+function Settings() {
+  const {
+    inputMode,
+    optionsQty,
+    inputModes,
+    language,
+    languages,
+    deckOrder,
+    deckOrderOptions,
+    themes,
+    theme,
+  } = useSelector(selectSettings);
+  const dispatch = useDispatch();
+
+  return (
+    <dialog className="settings-dialog" open>
+      <form
+        className="settings"
+        method="dialog"
+        onSubmit={(evt) => {
+          const data = Object.fromEntries(new FormData(evt.target));
+          data.optionsQty = +data.optionsQty;
+          dispatch(setVisibility(false));
+          dispatch(saveSettings(data));
+        }}
+      >
+        <div className="settings__wrapper">
+          <h2 className="settings__title">Game Settings</h2>
+          <fieldset>
+            <div className="form__options">
+              <legend>Language</legend>
+              <select name="language" id="language" defaultValue={language}>
+                {languages.map((l) => (
+                  <option value={l} key={l}>{l}</option>
+                ))}
+              </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="form__options">
+              <legend>Input Mode</legend>
+              {Object.values(inputModes).map((mode) => (
+                <FormRadio
+                  value={mode.type}
+                  key={mode.type}
+                  id={mode.type}
+                  label={mode.icon}
+                  name="inputMode"
+                  defaultChecked={mode.type === inputMode}
+                  onChange={(evt) => dispatch(setInputMode(evt.target.value))}
+                />
+              ))}
+            </div>
+          </fieldset>
+          <fieldset disabled={inputMode === 'text' ? true : null}>
+            <legend>Options Number</legend>
+            <FormRange
+              min={inputModes.radio.min}
+              max={inputModes.radio.max}
+              name="optionsQty"
+              defaultValue={optionsQty}
+              id="optionsQty"
+            />
+          </fieldset>
+          <fieldset className="form__setting">
+            <div className="form__options form__options--column">
+              <legend>Deck Order</legend>
+              <div className="form__set">
+                {Object.values(deckOrderOptions).map((option) => (
+                  <FormRadio
+                    value={option.type}
+                    key={option.type}
+                    id={option.type}
+                    label={option.label}
+                    name="deckOrder"
+                    defaultChecked={option.type === deckOrder}
+                  />
+                ))}
+              </div>
+            </div>
+          </fieldset>
+          <fieldset className="form__setting">
+            <div className="form__options form__options--column">
+              <legend>Theme</legend>
+              <div className="form__set">
+                {Object.values(themes).map((option) => (
+                  <FormRadio
+                    value={option.type}
+                    key={option.type}
+                    id={option.type}
+                    label={option.icon}
+                    name="theme"
+                    defaultChecked={option.type === theme}
+                  />
+                ))}
+              </div>
+            </div>
+          </fieldset>
+          <div className="form__actions">
+            <Button type="submit">Save</Button>
+            <Button type="reset">Reset</Button>
+            <Button onClick={() => dispatch(setVisibility(false))}>Cancel</Button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+  );
 }
 
 export default Settings;
