@@ -6,10 +6,11 @@ import './form.css';
 import { selectSettings } from '../../features/settings/settingsSlice';
 
 function Form({
-  options, answer, setResults, currentCard, setCurrentCard,
+  options, answer, setResults, currentCard, setCurrentCard, className,
 }) {
   // const language = useContext(LanguageContext);
   // const attemptsAllowed = 3;
+  const classList = className ? `form ${className}` : 'form';
 
   const { language, inputMode, attemptsGiven } = useSelector(selectSettings);
   let attemptsLeft = attemptsGiven;
@@ -47,7 +48,7 @@ function Form({
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit} autoComplete="off">
+    <form className={classList} onSubmit={handleSubmit} autoComplete="off">
       <fieldset className="form__options">
         {inputMode === 'text' ? (
           <FormInput language={language} />
