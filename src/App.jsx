@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import { selectSettings, setVisibility } from './features/settings/settingsSlice';
 import { shuffleDeck, selectDeck } from './features/deck/deckSlice';
 import { shuffle } from './utils/utils';
+import Dialog from './components/Dialog/Dialog';
 
 function App() {
   const deck = useSelector(selectDeck);
@@ -65,8 +66,10 @@ function App() {
         </Controls>
         <Footer />
       </div>
-      { isVisible && <Settings /> }
-    </div>
+      <Dialog open={isVisible}>
+        <Settings />
+      </Dialog>
+    </>
   );
 }
 
