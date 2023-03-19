@@ -8,8 +8,6 @@ import { selectSettings } from '../../features/settings/settingsSlice';
 function Form({
   options, answer, setResults, currentCard, setCurrentCard, className,
 }) {
-  // const language = useContext(LanguageContext);
-  // const attemptsAllowed = 3;
   const classList = className ? `form ${className}` : 'form';
 
   const { language, inputMode, attemptsGiven } = useSelector(selectSettings);
