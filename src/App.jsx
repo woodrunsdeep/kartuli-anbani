@@ -47,7 +47,7 @@ function App() {
   }, [deck, currentCard, optionsQty]);
 
   return (
-    <div className="App">
+    <>
       <div className="content" inert={isVisible ? '' : null}>
         <Carousel results={results} currentSlide={currentCard} />
         <Controls>
