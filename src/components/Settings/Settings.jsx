@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Button from '../Button/Button';
 import FormRadio from '../Form/FormRadio';
 import FormRange from '../Form/FormRange';
-import './settings.css';
 import {
   setInputMode,
   selectSettings,
