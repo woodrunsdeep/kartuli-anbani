@@ -41,13 +41,6 @@ function App() {
     }
   };
 
-  const handleOptionsQChange = (evt) => {
-    const newOptionsQty = +evt.target.value;
-    if (inputMode === 'radio' && newOptionsQty !== optionsQuantity) {
-      setOptionsQuantity(newOptionsQty);
-    }
-  };
-
   useEffect(() => {
     generateOptions(deck);
   }, [deck, currentCard, optionsQty]);
