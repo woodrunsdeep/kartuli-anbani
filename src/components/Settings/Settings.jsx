@@ -26,7 +26,7 @@ function Settings() {
 
   return (
     <form
-      className="settings"
+      className="form form__settings"
       method="dialog"
       onSubmit={(evt) => {
         const data = Object.fromEntries(new FormData(evt.target));
