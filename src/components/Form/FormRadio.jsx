@@ -1,4 +1,6 @@
-function FormRadio({ value, id, name }) {
+function FormRadio({
+  value, label, id, name, ...props
+}) {
   return (
     <div className="form__radio-box">
       <input
@@ -8,9 +10,10 @@ function FormRadio({ value, id, name }) {
         id={id}
         value={value}
         required
+        {...props}
       />
       <label htmlFor={id} className="form__radio-label button">
-        {value}
+        {label}
       </label>
     </div>
   );

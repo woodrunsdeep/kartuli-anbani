@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import LanguageContext from '../../context/LanguageContext';
+import { useSelector } from 'react-redux';
+import { selectSettings } from '../../features/settings/settingsSlice';
 import './card.css';
 
 function Card({ letter, isCorrect }) {
-  const language = useContext(LanguageContext);
+  const { language } = useSelector(selectSettings);
   let classListCard = 'card';
   let classListBack = 'card__face card__face--back';
 

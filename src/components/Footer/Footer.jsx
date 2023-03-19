@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import LanguageContext from '../../context/LanguageContext';
+import { useSelector } from 'react-redux';
+import { selectSettings } from '../../features/settings/settingsSlice';
 import './footer.css';
 
 function Footer() {
-  const language = useContext(LanguageContext);
+  const { language } = useSelector(selectSettings);
   const author = language === 'en' ? 'Gleb Dmitriev' : 'Глеб Дмитриев';
   const year = (new Date()).getFullYear();
   const copyRight = `© ${author} - ${year}`;

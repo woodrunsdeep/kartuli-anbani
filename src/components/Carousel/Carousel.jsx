@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useSelector } from 'react-redux';
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
 import './swiper-overrides.css';
 import Card from '../Card/Card';
+import { selectDeck } from '../../features/deck/deckSlice';
 
-function Carousel({ deck, currentSlide, results }) {
+function Carousel({ currentSlide, results }) {
   const slideDelay = 800;
+  const deck = useSelector(selectDeck);
 
   useEffect(() => {
     setTimeout(() => {

@@ -1,16 +1,18 @@
-import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import Button from '../Button/Button';
 import FormInput from './FormInput';
 import FormRadioGroup from './FormRadioGroup';
 import './form.css';
-import LanguageContext from '../../context/LanguageContext';
+import { selectSettings } from '../../features/settings/settingsSlice';
 
 function Form({
-  inputMode, options, answer, setResults, currentCard, setCurrentCard,
+  options, answer, setResults, currentCard, setCurrentCard,
 }) {
-  const language = useContext(LanguageContext);
-  const attemptsAllowed = 3;
-  let attemptsLeft = attemptsAllowed;
+  // const language = useContext(LanguageContext);
+  // const attemptsAllowed = 3;
+
+  const { language, inputMode, attemptsGiven } = useSelector(selectSettings);
+  let attemptsLeft = attemptsGiven;
 
   function handleSubmit(evt) {
     evt.preventDefault(); // submit handler draft
@@ -35,7 +37,7 @@ function Form({
         newResults[currentCard].isAnswerCorrect = true;
         return newResults;
       });
-      attemptsLeft = attemptsAllowed;
+      attemptsLeft = attemptsGiven;
       setCurrentCard((prevCard) => prevCard + 1);
       evt.target.reset();
       return;
@@ -48,9 +50,9 @@ function Form({
     <form className="form" onSubmit={handleSubmit} autoComplete="off">
       <fieldset className="form__options">
         {inputMode === 'text' ? (
-          <FormInput />
+          <FormInput language={language} />
         ) : (
-          <FormRadioGroup options={options} />
+          <FormRadioGroup options={options} language={language} name="option" />
         )}
       </fieldset>
       <Button className="form__button" type="submit">

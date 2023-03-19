@@ -1,9 +1,6 @@
-import { useContext } from 'react';
 import FormRadio from './FormRadio';
-import LanguageContext from '../../context/LanguageContext';
 
-function FormRadioGroup({ options }) {
-  const language = useContext(LanguageContext);
+function FormRadioGroup({ options, name, language }) {
   return (
     <div className="form__radio-group">
       {options.map((radio) => (
@@ -11,7 +8,8 @@ function FormRadioGroup({ options }) {
           value={radio.name[language]}
           id={radio.id}
           key={radio.id}
-          name="option"
+          label={radio.name[language]}
+          name={name}
         />
       ))}
     </div>
