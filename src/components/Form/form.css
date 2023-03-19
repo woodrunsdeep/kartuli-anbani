@@ -35,10 +35,6 @@
     display: flex;
     gap: 20px;
     height: auto;
-    margin: 0;
-    padding: 0;
-
-    border: none;
 }
 
 .form__input {

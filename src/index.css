@@ -51,6 +51,13 @@
     box-sizing: border-box;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
 .page {
     margin: 0;
     padding-bottom: 20px;
