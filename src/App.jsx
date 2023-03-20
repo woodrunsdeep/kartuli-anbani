@@ -55,7 +55,8 @@ function App() {
             <Button onClick={() => dispatch(setVisibility(true))}>⚙️</Button>
             <Button onClick={() => dispatch(shuffleDeck())}>♻️</Button>
           </div>
-          <Form className="controls__form"
+          <Form
+            className="controls__form"
             currentCard={currentCard}
             options={options}
             deck={deck}
