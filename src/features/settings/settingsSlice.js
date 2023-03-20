@@ -75,7 +75,11 @@ export const settingsSlice = createSlice({
     setVisibility: (state, action) => {
       state.isVisible = action.payload;
     },
-    saveSettings: (state, action) => ({ ...state, ...action.payload }),
+    saveSettings: (state, action) => ({
+      ...state,
+      ...action.payload,
+      optionsQty: Number(action.payload.optionsQty) || state.optionsQty,
+    }),
     reset: () => initialState,
   },
 });

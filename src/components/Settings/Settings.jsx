@@ -30,7 +30,6 @@ function Settings() {
       method="dialog"
       onSubmit={(evt) => {
         const data = Object.fromEntries(new FormData(evt.target));
-        data.optionsQty = +data.optionsQty;
         dispatch(setVisibility(false));
         dispatch(saveSettings(data));
       }}
