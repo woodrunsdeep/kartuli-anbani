@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import 'swiper/css';
 import './swiper-overrides.css';
 import Card from '../Card/Card';
-import { selectDeck } from '../../features/deck/deckSlice';
+import { selectDeck } from '../../features/sessionSlice';
 
 function Carousel({ currentSlide, results }) {
   const slideDelay = 800;

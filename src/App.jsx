@@ -7,7 +7,7 @@ import Settings from './components/Settings/Settings';
 import Controls from './components/Controls/Controls';
 import Footer from './components/Footer/Footer';
 import { selectSettings, setVisibility } from './features/settings/settingsSlice';
-import { shuffleDeck, selectDeck } from './features/deck/deckSlice';
+import { shuffleDeck, selectDeck } from './features/sessionSlice';
 import { shuffle } from './utils/utils';
 import Dialog from './components/Dialog/Dialog';
 

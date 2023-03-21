@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { shuffle } from '../../utils/utils';
-import { settingsSlice } from '../settings/settingsSlice';
+import { shuffle } from '../utils/utils';
+import { settingsSlice } from './settings/settingsSlice';
 
-const initialState = [
+const deck = [
   {
     id: 1,
     georgian: 'ა',
@@ -302,11 +302,26 @@ const initialState = [
   },
 ];
 
-const deckSlice = createSlice({
-  name: 'deck',
+const results = deck.map(() => ({
+  isCorrect: null,
+  isFinished: null,
+  mistakes: 0,
+}));
+
+const initialState = {
+  deck,
+  results,
+  currentCardId: 0,
+  attempts: 3,
+};
+
+const sessionSlice = createSlice({
+  name: 'session',
   initialState,
   reducers: {
-    shuffleDeck: (state) => shuffle(state),
+    shuffleDeck: (state) => {
+      state.deck = shuffle(state.deck);
+    },
   },
   extraReducers: {
     [settingsSlice.actions.saveSettings]: (state, action) => {
@@ -325,6 +340,6 @@ const deckSlice = createSlice({
   },
 });
 
-export const selectDeck = (state) => state.deck;
-export const { shuffleDeck } = deckSlice.actions;
-export const deckReducer = deckSlice.reducer;
+export const selectDeck = (state) => state.session.deck;
+export const { shuffleDeck } = sessionSlice.actions;
+export const sessionReducer = sessionSlice.reducer;
