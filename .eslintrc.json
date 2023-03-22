@@ -30,6 +30,7 @@
         "assert": "either",
         "depth": 3
       }],
-      "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}]
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
+      "no-plusplus": 0
     }
 }
