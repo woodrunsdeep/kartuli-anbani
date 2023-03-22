@@ -20,8 +20,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-
-.card--error {
+.card--active.card-enter-active {
     animation: error 300ms cubic-bezier(.36,.07,.19,.97) both;
 }
 

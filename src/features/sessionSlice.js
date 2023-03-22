@@ -313,6 +313,7 @@ const initialState = {
   results,
   currentCardIndex: 0,
   attempts: 3,
+  isAnimated: false,
 };
 
 const sessionSlice = createSlice({
@@ -352,6 +353,9 @@ const sessionSlice = createSlice({
         state.currentCardIndex++;
       }
     },
+    animate: (state, action) => {
+      state.isAnimated = action.payload;
+    },
   },
   extraReducers: {
     [settingsSlice.actions.saveSettings]: (state, action) => {
@@ -371,5 +375,5 @@ const sessionSlice = createSlice({
 });
 
 export const selectSession = (state) => state.session;
-export const { restart, answerCorrect, answerWrong } = sessionSlice.actions;
+export const { restart, answerCorrect, answerWrong, animate } = sessionSlice.actions;
 export const sessionReducer = sessionSlice.reducer;
