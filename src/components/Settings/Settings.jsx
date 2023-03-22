@@ -29,6 +29,7 @@ function Settings() {
       className="form form__settings"
       method="dialog"
       onSubmit={(evt) => {
+        evt.preventDefault();
         const data = Object.fromEntries(new FormData(evt.target));
         dispatch(setVisibility(false));
         dispatch(saveSettings(data));
