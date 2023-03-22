@@ -13,6 +13,7 @@ import Dialog from './components/Dialog/Dialog';
 
 function App() {
   const { deck, currentCardIndex } = useSelector(selectSession);
+  const { isVisible, optionsQty, inputMode, deckOrder } = useSelector(selectSettings);
   const dispatch = useDispatch();
 
   const [options, setOptions] = useState([]);
