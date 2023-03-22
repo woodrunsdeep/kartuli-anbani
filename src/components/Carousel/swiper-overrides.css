@@ -5,7 +5,7 @@
 }
 
 .swiper-slide {
-  transition: 450ms ease-in-out;
+  transition: transform 450ms ease-in-out;
 }
 
 .swiper-slide-transform {
