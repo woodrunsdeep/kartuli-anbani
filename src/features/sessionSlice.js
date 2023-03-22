@@ -361,14 +361,19 @@ const sessionSlice = createSlice({
     [settingsSlice.actions.saveSettings]: (state, action) => {
       switch (action.payload.deckOrder) {
         case 'random':
-          return shuffle(state);
+          state.deck = shuffle(initialState.deck);
+          break;
         case 'alphabetical':
-          return initialState;
+          state.deck = initialState.deck;
+          break;
         case 'reverse':
-          return [...initialState].reverse();
+          state.deck = [...initialState.deck].reverse();
+          break;
         default:
           return state;
       }
+      state.results = initialState.results;
+      state.currentCardIndex = initialState.currentCardIndex;
     },
     [settingsSlice.actions.reset]: () => initialState,
   },
