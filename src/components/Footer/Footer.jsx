@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectSettings } from '../../features/settings/settingsSlice';
+import { selectSettings } from '../../features/settingsSlice';
 import './footer.css';
 
 function Footer() {

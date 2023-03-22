@@ -5,7 +5,7 @@ import Button from './components/Button/Button';
 import Settings from './components/Settings/Settings';
 import Controls from './components/Controls/Controls';
 import Footer from './components/Footer/Footer';
-import { selectSettings, setVisibility } from './features/settings/settingsSlice';
+import { selectSettings, setVisibility } from './features/settingsSlice';
 import { restart } from './features/sessionSlice';
 import Dialog from './components/Dialog/Dialog';
 

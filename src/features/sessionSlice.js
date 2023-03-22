@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { shuffle } from '../utils/utils';
-import { settingsSlice } from './settings/settingsSlice';
+import { settingsSlice } from './settingsSlice';
 
 const deck = [
   {

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { selectSettings } from '../../features/settings/settingsSlice';
+import { selectSettings } from '../../features/settingsSlice';
 import './card.css';
 import { selectSession } from '../../features/sessionSlice';
 
