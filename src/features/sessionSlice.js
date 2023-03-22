@@ -311,7 +311,7 @@ const results = deck.map(() => ({
 const initialState = {
   deck,
   results,
-  currentCardId: 0,
+  currentCardIndex: 0,
   attempts: 3,
 };
 
@@ -319,8 +319,21 @@ const sessionSlice = createSlice({
   name: 'session',
   initialState,
   reducers: {
-    shuffleDeck: (state) => {
-      state.deck = shuffle(state.deck);
+    answerCorrect: (state) => {
+      state.results[state.currentCardIndex].isCorrect = true;
+      state.results[state.currentCardIndex].isFinished = true;
+      state.attempts = initialState.attempts;
+      state.currentCardIndex++;
+    },
+    answerWrong: (state) => {
+      state.attempts--;
+      state.results[state.currentCardIndex].mistakes++;
+      if (state.attempts < 1) {
+        state.results[state.currentCardIndex].isCorrect = false;
+        state.results[state.currentCardIndex].isFinished = true;
+        state.attempts = initialState.attempts;
+        state.currentCardIndex++;
+      }
     },
   },
   extraReducers: {
@@ -340,6 +353,6 @@ const sessionSlice = createSlice({
   },
 });
 
-export const selectDeck = (state) => state.session.deck;
-export const { shuffleDeck } = sessionSlice.actions;
+export const selectSession = (state) => state.session;
+export const { answerCorrect, answerWrong } = sessionSlice.actions;
 export const sessionReducer = sessionSlice.reducer;

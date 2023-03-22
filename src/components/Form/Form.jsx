@@ -1,48 +1,32 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../Button/Button';
 import FormInput from './FormInput';
 import FormRadioGroup from './FormRadioGroup';
 import './form.css';
 import { selectSettings } from '../../features/settings/settingsSlice';
+import { answerCorrect, answerWrong, selectSession } from '../../features/sessionSlice';
 
 function Form({
-  options, answer, setResults, currentCard, setCurrentCard, className,
+  options, className,
 }) {
   const classList = className ? `form ${className}` : 'form';
-
-  const { language, inputMode, attemptsGiven } = useSelector(selectSettings);
-  let attemptsLeft = attemptsGiven;
+  const dispatch = useDispatch();
+  const { language, inputMode } = useSelector(selectSettings);
+  const { deck, currentCardIndex } = useSelector(selectSession);
+  const answer = deck[currentCardIndex].name[language];
 
   function handleSubmit(evt) {
-    evt.preventDefault(); // submit handler draft
+    evt.preventDefault();
     const guess = Object.fromEntries(new FormData(evt.target))
       .option.toLowerCase()
       .trim();
 
-    if (guess === answer.name[language]) {
-      setResults((prevState) => {
-        const newResults = [...prevState];
-        newResults[currentCard].isAnswerCorrect = true;
-        return newResults;
-      });
-      attemptsLeft = attemptsGiven;
-      setCurrentCard((prevCard) => prevCard + 1);
-      evt.target.reset();
-      return;
+    if (guess === answer) {
+      dispatch(answerCorrect());
+    } else {
+      dispatch(answerWrong());
     }
 
-    if (attemptsLeft <= 1) {
-      evt.target.reset();
-      setResults((prevState) => {
-        const newResults = [...prevState];
-        newResults[currentCard].isAnswerCorrect = false;
-        return newResults;
-      });
-      setCurrentCard((prevCard) => prevCard + 1);
-      return;
-    }
-
-    attemptsLeft -= 1;
     evt.target.reset();
   }
 

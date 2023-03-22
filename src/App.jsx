@@ -19,15 +19,6 @@ function App() {
   const dispatch = useDispatch();
 
   const [options, setOptions] = useState([]);
-  const [currentCard, setCurrentCard] = useState(0);
-
-  const initialResults = (cards) => (
-    cards.map((card) => ({
-      isAnswerCorrect: null,
-      letter: card.name[language],
-    })));
-
-  const [results, setResults] = useState(() => initialResults(deck));
 
   const generateOptions = async (cards) => {
     if (inputMode === 'radio') {
@@ -49,21 +40,13 @@ function App() {
   return (
     <>
       <div className="content" inert={isVisible ? '' : null}>
-        <Carousel results={results} currentSlide={currentCard} />
+        <Carousel currentSlide={currentCard} />
         <Controls>
           <div className="controls__actions">
             <Button onClick={() => dispatch(setVisibility(true))}>⚙️</Button>
             <Button onClick={() => dispatch(shuffleDeck())}>♻️</Button>
           </div>
-          <Form
-            className="controls__form"
-            currentCard={currentCard}
-            options={options}
-            deck={deck}
-            setResults={setResults}
-            answer={deck[currentCard]}
-            setCurrentCard={setCurrentCard}
-          />
+          <Form className="controls__form" options={options} />
         </Controls>
         <Footer />
       </div>
