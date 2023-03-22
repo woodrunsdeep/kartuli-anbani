@@ -319,6 +319,23 @@ const sessionSlice = createSlice({
   name: 'session',
   initialState,
   reducers: {
+    restart: (state, action) => {
+      switch (action.payload) {
+        case 'random':
+          state.deck = [...shuffle(initialState.deck)];
+          break;
+        case 'alphabetical':
+          state.deck = [...initialState.deck];
+          break;
+        case 'reverse':
+          state.deck = [...initialState.deck].reverse();
+          break;
+        default:
+          return state;
+      }
+      state.results = initialState.results;
+      state.currentCardIndex = initialState.currentCardIndex;
+    },
     answerCorrect: (state) => {
       state.results[state.currentCardIndex].isCorrect = true;
       state.results[state.currentCardIndex].isFinished = true;
@@ -354,5 +371,5 @@ const sessionSlice = createSlice({
 });
 
 export const selectSession = (state) => state.session;
-export const { answerCorrect, answerWrong } = sessionSlice.actions;
+export const { restart, answerCorrect, answerWrong } = sessionSlice.actions;
 export const sessionReducer = sessionSlice.reducer;

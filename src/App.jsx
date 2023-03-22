@@ -7,7 +7,7 @@ import Settings from './components/Settings/Settings';
 import Controls from './components/Controls/Controls';
 import Footer from './components/Footer/Footer';
 import { selectSettings, setVisibility } from './features/settings/settingsSlice';
-import { shuffleDeck, selectSession } from './features/sessionSlice';
+import { restart, selectSession } from './features/sessionSlice';
 import { shuffle } from './utils/utils';
 import Dialog from './components/Dialog/Dialog';
 
@@ -42,7 +42,7 @@ function App() {
         <Controls>
           <div className="controls__actions">
             <Button onClick={() => dispatch(setVisibility(true))}>⚙️</Button>
-            <Button onClick={() => dispatch(shuffleDeck())}>♻️</Button>
+            <Button onClick={() => dispatch(restart(deckOrder))}>♻️</Button>
           </div>
           <Form className="controls__form" options={options} />
         </Controls>
