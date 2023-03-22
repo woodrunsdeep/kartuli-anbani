@@ -8,7 +8,7 @@ import {
   setVisibility,
   saveSettings,
   reset,
-} from '../../features/settingsSlice';
+} from '../../slices/settingsSlice';
 
 function Settings() {
   const {

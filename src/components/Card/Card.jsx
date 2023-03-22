@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { selectSettings } from '../../features/settingsSlice';
+import { selectSettings } from '../../slices/settingsSlice';
 import './card.css';
-import { selectSession } from '../../features/sessionSlice';
+import { selectSession } from '../../slices/sessionSlice';
 
 function Card({ letter, isCorrect, isFinished, isActive }) {
   const { language } = useSelector(selectSettings);

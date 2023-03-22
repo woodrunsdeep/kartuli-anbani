@@ -3,8 +3,8 @@ import Button from '../Button/Button';
 import FormInput from './FormInput';
 import FormRadioGroup from './FormRadioGroup';
 import './form.css';
-import { selectSettings } from '../../features/settingsSlice';
-import { answerCorrect, answerWrong, selectSession, animate } from '../../features/sessionSlice';
+import { selectSettings } from '../../slices/settingsSlice';
+import { answerCorrect, answerWrong, selectSession, animate } from '../../slices/sessionSlice';
 
 function Form({
   options, className,

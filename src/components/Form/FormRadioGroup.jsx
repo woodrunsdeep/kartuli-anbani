@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectSession } from '../../features/sessionSlice';
-import { selectSettings } from '../../features/settingsSlice';
+import { selectSession } from '../../slices/sessionSlice';
+import { selectSettings } from '../../slices/settingsSlice';
 import { shuffle } from '../../utils/utils';
 import FormRadio from './FormRadio';
 

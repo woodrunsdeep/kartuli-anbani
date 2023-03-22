@@ -5,8 +5,8 @@ import Button from './components/Button/Button';
 import Settings from './components/Settings/Settings';
 import Controls from './components/Controls/Controls';
 import Footer from './components/Footer/Footer';
-import { selectSettings, setVisibility } from './features/settingsSlice';
-import { restart } from './features/sessionSlice';
+import { selectSettings, setVisibility } from './slices/settingsSlice';
+import { restart } from './slices/sessionSlice';
 import Dialog from './components/Dialog/Dialog';
 
 function App() {
