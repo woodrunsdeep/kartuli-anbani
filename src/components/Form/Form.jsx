@@ -6,9 +6,7 @@ import './form.css';
 import { selectSettings } from '../../slices/settingsSlice';
 import { answerCorrect, answerWrong, selectSession, animate } from '../../slices/sessionSlice';
 
-function Form({
-  options, className,
-}) {
+function Form({ className }) {
   const classList = className ? `form ${className}` : 'form';
   const dispatch = useDispatch();
   const { language, inputMode } = useSelector(selectSettings);
@@ -42,7 +40,7 @@ function Form({
         {inputMode === 'text' ? (
           <FormInput language={language} />
         ) : (
-          <FormRadioGroup options={options} language={language} name="option" />
+          <FormRadioGroup language={language} name="option" />
         )}
       </fieldset>
       <Button className="form__button" type="submit">
