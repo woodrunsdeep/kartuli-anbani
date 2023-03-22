@@ -38,7 +38,11 @@ function Carousel() {
       {deck.map((letter, index) => (
         <SwiperSlide key={letter.id}>
           <div className="swiper-slide-transform">
-            <Card letter={letter} isCorrect={results[index].isAnswerCorrect} />
+            <Card
+              letter={letter}
+              isCorrect={results[index].isCorrect}
+              isFinished={results[index].isFinished}
+            />
           </div>
         </SwiperSlide>
       ))}

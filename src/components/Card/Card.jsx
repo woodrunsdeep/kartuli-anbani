@@ -2,14 +2,13 @@ import { useSelector } from 'react-redux';
 import { selectSettings } from '../../features/settings/settingsSlice';
 import './card.css';
 
-function Card({ letter, isCorrect }) {
+function Card({ letter, isCorrect, isFinished }) {
   const { language } = useSelector(selectSettings);
   let classListCard = 'card';
   let classListBack = 'card__face card__face--back';
 
-  classListCard += isCorrect === true || isCorrect === false ? ' card card--flipped' : '';
-  classListBack += isCorrect === true ? ' card__face--success' : '';
-  classListBack += isCorrect === false ? ' card__face--failed' : '';
+  classListBack += isCorrect ? ' card__face--success' : ' card__face--failed';
+  classListCard += isFinished ? ' card card--flipped' : '';
 
   return (
     <div className={classListCard} data-id={letter.id}>
