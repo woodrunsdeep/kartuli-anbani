@@ -5,18 +5,18 @@ import { useSelector } from 'react-redux';
 import 'swiper/css';
 import './swiper-overrides.css';
 import Card from '../Card/Card';
-import { selectDeck } from '../../features/sessionSlice';
+import { selectSession } from '../../features/sessionSlice';
 
-function Carousel({ currentSlide, results }) {
+function Carousel() {
   const slideDelay = 800;
-  const deck = useSelector(selectDeck);
+  const { deck, currentCardIndex, results } = useSelector(selectSession);
 
   useEffect(() => {
     setTimeout(() => {
       const { swiper } = document.querySelector('.swiper');
-      swiper.slideTo(currentSlide);
+      swiper.slideTo(currentCardIndex);
     }, slideDelay);
-  }, [currentSlide]);
+  }, [currentCardIndex]);
 
   return (
     <Swiper

@@ -7,25 +7,22 @@ import Settings from './components/Settings/Settings';
 import Controls from './components/Controls/Controls';
 import Footer from './components/Footer/Footer';
 import { selectSettings, setVisibility } from './features/settings/settingsSlice';
-import { shuffleDeck, selectDeck } from './features/sessionSlice';
+import { shuffleDeck, selectSession } from './features/sessionSlice';
 import { shuffle } from './utils/utils';
 import Dialog from './components/Dialog/Dialog';
 
 function App() {
-  const deck = useSelector(selectDeck);
-  const {
-    isVisible, optionsQty, language, inputMode,
-  } = useSelector(selectSettings);
+  const { deck, currentCardIndex } = useSelector(selectSession);
   const dispatch = useDispatch();
 
   const [options, setOptions] = useState([]);
 
   const generateOptions = async (cards) => {
     if (inputMode === 'radio') {
-      const currentCardId = cards[currentCard].id;
+      const currentCardId = cards[currentCardIndex].id;
       const filteredCards = shuffle(cards.filter((card) => card.id !== currentCardId));
       const optionsToShuffle = [
-        cards[currentCard],
+        cards[currentCardIndex],
         ...filteredCards.slice(0, optionsQty - 1),
       ];
       const shuffledOptions = shuffle(optionsToShuffle);
@@ -35,12 +32,12 @@ function App() {
 
   useEffect(() => {
     generateOptions(deck);
-  }, [deck, currentCard, optionsQty]);
+  }, [deck, currentCardIndex, optionsQty]);
 
   return (
     <>
       <div className="content" inert={isVisible ? '' : null}>
-        <Carousel currentSlide={currentCard} />
+        <Carousel />
         <Controls>
           <div className="controls__actions">
             <Button onClick={() => dispatch(setVisibility(true))}>⚙️</Button>
