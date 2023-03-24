@@ -40,15 +40,24 @@ const initialState = {
   deckOrderOptions: {
     alphabetical: {
       type: 'alphabetical',
-      label: 'a-z',
+      label: {
+        en: 'a-z',
+        ru: 'а-я',
+      },
     },
     reverse: {
       type: 'reverse',
-      label: 'z-a',
+      label: {
+        en: 'z-a',
+        ru: 'я-а',
+      },
     },
     random: {
       type: 'random',
-      label: '🔀',
+      label: {
+        en: '🔀',
+        ru: '🔀',
+      },
     },
   },
 };
