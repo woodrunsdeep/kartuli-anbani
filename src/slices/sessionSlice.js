@@ -88,7 +88,7 @@ const deck = [
     id: 10,
     georgian: 'კ',
     name: {
-      en: 'k’ani',
+      en: "k'ani",
       ru: 'кани',
     },
     ipa: 'k’',
@@ -133,7 +133,7 @@ const deck = [
     id: 15,
     georgian: 'პ',
     name: {
-      en: 'p’ari',
+      en: "p'ari",
       ru: 'пари',
     },
     ipa: 'p’',
@@ -169,7 +169,7 @@ const deck = [
     id: 19,
     georgian: 'ტ',
     name: {
-      en: 't’ari',
+      en: "t'ari",
       ru: 'тари',
     },
     ipa: 't’',
@@ -214,7 +214,7 @@ const deck = [
     id: 24,
     georgian: 'ყ',
     name: {
-      en: 'q’ari',
+      en: "q'ari",
       ru: 'кари',
     },
     ipa: 'q’',
@@ -259,7 +259,7 @@ const deck = [
     id: 29,
     georgian: 'წ',
     name: {
-      en: 'ts’ili',
+      en: "ts'ili",
       ru: 'цили',
     },
     ipa: 't͡s’',
@@ -268,7 +268,7 @@ const deck = [
     id: 30,
     georgian: 'ჭ',
     name: {
-      en: 'ch’ari',
+      en: "ch'ari",
       ru: 'чари',
     },
     ipa: 't͡ʃ’',
