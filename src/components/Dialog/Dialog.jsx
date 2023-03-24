@@ -1,7 +1,7 @@
 import './dialog.css';
 
-export default function Dialog({ children, open }) {
+export default function Dialog({ children, open, ...props }) {
   return (
-    <dialog className="dialog" open={open}>{children}</dialog>
+    <dialog className="dialog" open={open} {...props}>{children}</dialog>
   );
 }

@@ -10,12 +10,12 @@ import { restart } from './slices/sessionSlice';
 import Dialog from './components/Dialog/Dialog';
 
 function App() {
-  const { isVisible, deckOrder } = useSelector(selectSettings);
+  const { isVisible, deckOrder, theme } = useSelector(selectSettings);
   const dispatch = useDispatch();
 
   return (
-    <>
-      <div className="content" inert={isVisible ? '' : null}>
+    <div className="content" data-theme={theme}>
+      <div inert={isVisible ? '' : null}>
         <Carousel />
         <Controls>
           <div className="controls__actions">
@@ -29,7 +29,7 @@ function App() {
       <Dialog open={isVisible}>
         <Settings />
       </Dialog>
-    </>
+    </div>
   );
 }
 

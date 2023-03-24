@@ -22,12 +22,12 @@
 .button:active {
     color: #fff;
 
-    background-color: var(--georgian-red-dark);
+    background-color: var(--color-accent);
     transform: scale(0.9);
     opacity: 0.8;
 }
 
 .button:focus {
-    outline: 2px solid var(--georgian-red-dark);
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
 }

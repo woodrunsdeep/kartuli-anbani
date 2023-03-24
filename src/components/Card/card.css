@@ -70,7 +70,7 @@
     font-size: 190px;
     text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
 
-    background-color: var(--georgian-red);
+    background-color: var(--font-color);
     background-clip: text;
 }
 

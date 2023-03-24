@@ -8,6 +8,7 @@ import {
   setVisibility,
   saveSettings,
   reset,
+  setTheme,
   setLanguage,
 } from '../../slices/settingsSlice';
 
@@ -102,6 +103,7 @@ function Settings() {
                 label={option.icon}
                 name="theme"
                 defaultChecked={option.type === theme}
+                onChange={(evt) => dispatch(setTheme(evt.target.value))}
               />
             ))}
           </div>
