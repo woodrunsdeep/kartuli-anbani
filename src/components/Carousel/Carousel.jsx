@@ -42,7 +42,7 @@ function Carousel() {
               letter={letter}
               isCorrect={results[index].isCorrect}
               isFinished={results[index].isFinished}
-              isActive={index === currentCardIndex}
+              isActive={index === currentCardIndex ? true : null}
             />
           </div>
         </SwiperSlide>

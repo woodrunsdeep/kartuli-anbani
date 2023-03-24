@@ -12,13 +12,12 @@ function Card({ letter, isCorrect, isFinished, isActive }) {
   let classListCard = 'card';
   let classListBack = 'card__face card__face--back';
 
-  classListCard += isActive ? ' card--active' : '';
   classListBack += isCorrect ? ' card__face--success' : ' card__face--failed';
   classListCard += isFinished ? ' card card--flipped' : '';
 
   return (
     <CSSTransition
-      in={isAnimated}
+      in={isActive ? isAnimated : null}
       timeout={300}
       classNames="card"
       nodeRef={nodeRef}
