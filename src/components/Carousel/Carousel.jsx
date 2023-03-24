@@ -23,7 +23,7 @@ function Carousel() {
       className="swiper"
       spaceBetween={40}
       centeredSlides
-      slideToClickedSlide
+      allowTouchMove={false}
       speed={600}
       slidesPerView={1.5}
       breakpoints={{
