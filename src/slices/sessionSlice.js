@@ -341,7 +341,9 @@ const sessionSlice = createSlice({
       state.results[state.currentCardIndex].isCorrect = true;
       state.results[state.currentCardIndex].isFinished = true;
       state.attempts = initialState.attempts;
-      state.currentCardIndex++;
+      if (state.currentCardIndex < state.deck.length - 1) {
+        state.currentCardIndex++;
+      }
     },
     answerWrong: (state) => {
       state.attempts--;
@@ -350,7 +352,9 @@ const sessionSlice = createSlice({
         state.results[state.currentCardIndex].isCorrect = false;
         state.results[state.currentCardIndex].isFinished = true;
         state.attempts = initialState.attempts;
-        state.currentCardIndex++;
+        if (state.currentCardIndex < state.deck.length - 1) {
+          state.currentCardIndex++;
+        }
       }
     },
     animate: (state, action) => {
