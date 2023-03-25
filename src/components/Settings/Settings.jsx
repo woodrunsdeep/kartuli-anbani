@@ -39,7 +39,7 @@ function Settings() {
     >
       <h2 className="form__title">{language === 'en' ? 'Game Settings' : 'Настройки игры'}</h2>
       <fieldset>
-        <div className="form__options">
+        <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Language' : 'Язык'}</legend>
           <select name="language" id="language" defaultValue={language} onChange={(evt) => dispatch(setLanguage(evt.target.value))}>
             {languages.map((l) => (
@@ -49,19 +49,21 @@ function Settings() {
         </div>
       </fieldset>
       <fieldset>
-        <div className="form__options form__options--row">
+        <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Input Mode' : 'Режим ввода'}</legend>
-          {Object.values(inputModes).map((mode) => (
-            <FormRadio
-              value={mode.type}
-              key={mode.type}
-              id={mode.type}
-              label={mode.icon}
-              name="inputMode"
-              defaultChecked={mode.type === inputMode}
-              onChange={(evt) => dispatch(setInputMode(evt.target.value))}
-            />
-          ))}
+          <div className="form__set">
+            {Object.values(inputModes).map((mode) => (
+              <FormRadio
+                value={mode.type}
+                key={mode.type}
+                id={mode.type}
+                label={mode.icon}
+                name="inputMode"
+                defaultChecked={mode.type === inputMode}
+                onChange={(evt) => dispatch(setInputMode(evt.target.value))}
+              />
+            ))}
+          </div>
         </div>
       </fieldset>
       <fieldset className="form__radio-options" disabled={inputMode === 'text' ? true : null}>
@@ -74,8 +76,8 @@ function Settings() {
           id="optionsQty"
         />
       </fieldset>
-      <fieldset className="form__setting">
-        <div className="form__options form__options--column">
+      <fieldset>
+        <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Deck Order' : 'Порядок сортировки'}</legend>
           <div className="form__set">
             {Object.values(deckOrderOptions).map((option) => (
@@ -91,8 +93,8 @@ function Settings() {
           </div>
         </div>
       </fieldset>
-      <fieldset className="form__setting">
-        <div className="form__options form__options--column">
+      <fieldset>
+        <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Theme' : 'Тема'}</legend>
           <div className="form__set">
             {Object.values(themes).map((option) => (
@@ -109,7 +111,7 @@ function Settings() {
           </div>
         </div>
       </fieldset>
-      <div className="form__actions form__set">
+      <div className="form__actions">
         <Button type="submit">{language === 'en' ? 'Save' : 'Сохранить'}</Button>
         <Button type="reset" onClick={() => dispatch(reset())}>{language === 'en' ? 'Reset' : 'Сброс'}</Button>
         <Button onClick={() => dispatch(setVisibility(false))}>{language === 'en' ? 'Cancel' : 'Отмена'}</Button>

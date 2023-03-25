@@ -16,8 +16,9 @@
 
 .form__radio-box {
   display: flex;
-  flex-basis: 84px;
+  flex-basis: 64px;
   flex-grow: 1;
+  min-width: 60px;
 }
 
 .form__radio-label {
@@ -99,6 +100,10 @@
 }
 
 .form__actions {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  justify-content: space-between;
+
   margin-top: 20px;
 }
 
@@ -130,6 +135,7 @@
 }
 
 .form__settings {
+  min-width: 345px;
   padding: 30px 20px;
 
   color: var(--font-color-inverse);
@@ -144,8 +150,14 @@
 }
 
 .form__set {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.form__setting {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
 }
