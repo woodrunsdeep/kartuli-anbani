@@ -50,6 +50,24 @@ function Settings() {
       </fieldset>
       <fieldset>
         <div className="form__setting">
+          <legend className="form__legend">{language === 'en' ? 'Theme' : 'Тема'}</legend>
+          <div className="form__set">
+            {Object.values(themes).map((option) => (
+              <FormRadio
+                value={option.type}
+                key={option.type}
+                id={option.type}
+                label={option.icon}
+                name="theme"
+                defaultChecked={option.type === theme}
+                onChange={(evt) => dispatch(setTheme(evt.target.value))}
+              />
+            ))}
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Input Mode' : 'Режим ввода'}</legend>
           <div className="form__set">
             {Object.values(inputModes).map((mode) => (
@@ -88,24 +106,6 @@ function Settings() {
                 label={option.label[language]}
                 name="deckOrder"
                 defaultChecked={option.type === deckOrder}
-              />
-            ))}
-          </div>
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Theme' : 'Тема'}</legend>
-          <div className="form__set">
-            {Object.values(themes).map((option) => (
-              <FormRadio
-                value={option.type}
-                key={option.type}
-                id={option.type}
-                label={option.icon}
-                name="theme"
-                defaultChecked={option.type === theme}
-                onChange={(evt) => dispatch(setTheme(evt.target.value))}
               />
             ))}
           </div>
