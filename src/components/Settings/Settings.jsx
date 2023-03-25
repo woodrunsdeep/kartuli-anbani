@@ -78,7 +78,7 @@ function Settings() {
       </fieldset>
       <fieldset>
         <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Deck Order' : 'Порядок сортировки'}</legend>
+          <legend className="form__legend">{language === 'en' ? 'Deck Order' : 'Сортировка'}</legend>
           <div className="form__set">
             {Object.values(deckOrderOptions).map((option) => (
               <FormRadio
@@ -112,7 +112,7 @@ function Settings() {
         </div>
       </fieldset>
       <div className="form__actions">
-        <Button type="submit">{language === 'en' ? 'Save' : 'Сохранить'}</Button>
+        <Button type="submit">{language === 'en' ? 'Ok' : 'Ок'}</Button>
         <Button type="reset" onClick={() => dispatch(reset())}>{language === 'en' ? 'Reset' : 'Сброс'}</Button>
         <Button onClick={() => dispatch(setVisibility(false))}>{language === 'en' ? 'Cancel' : 'Отмена'}</Button>
       </div>
