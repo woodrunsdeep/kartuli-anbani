@@ -314,6 +314,7 @@ const initialState = {
   currentCardIndex: 0,
   attempts: 3,
   isAnimated: false,
+  inProgress: false,
 };
 
 const sessionSlice = createSlice({
@@ -338,6 +339,7 @@ const sessionSlice = createSlice({
       state.currentCardIndex = initialState.currentCardIndex;
     },
     answerCorrect: (state) => {
+      state.inProgress = true;
       state.results[state.currentCardIndex].isCorrect = true;
       state.results[state.currentCardIndex].isFinished = true;
       state.attempts = initialState.attempts;
@@ -346,6 +348,7 @@ const sessionSlice = createSlice({
       }
     },
     answerWrong: (state) => {
+      state.inProgress = true;
       state.attempts--;
       state.results[state.currentCardIndex].mistakes++;
       if (state.attempts < 1) {
@@ -363,21 +366,23 @@ const sessionSlice = createSlice({
   },
   extraReducers: {
     [settingsSlice.actions.saveSettings]: (state, action) => {
-      switch (action.payload.deckOrder) {
-        case 'random':
-          state.deck = shuffle(initialState.deck);
-          break;
-        case 'alphabetical':
-          state.deck = initialState.deck;
-          break;
-        case 'reverse':
-          state.deck = [...initialState.deck].reverse();
-          break;
-        default:
-          return state;
+      if (!state.inProgress) {
+        switch (action.payload.deckOrder) {
+          case 'random':
+            state.deck = shuffle(initialState.deck);
+            break;
+          case 'alphabetical':
+            state.deck = initialState.deck;
+            break;
+          case 'reverse':
+            state.deck = [...initialState.deck].reverse();
+            break;
+          default:
+            return state;
+        }
+        state.results = initialState.results;
+        state.currentCardIndex = initialState.currentCardIndex;
       }
-      state.results = initialState.results;
-      state.currentCardIndex = initialState.currentCardIndex;
     },
     [settingsSlice.actions.reset]: () => initialState,
   },
