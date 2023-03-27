@@ -317,6 +317,15 @@ const initialState = {
   inProgress: false,
 };
 
+const updateResults = (state, isCorrect) => {
+  state.results[state.currentCardIndex].isCorrect = isCorrect;
+  state.results[state.currentCardIndex].isFinished = true;
+  state.attempts = initialState.attempts;
+  if (state.currentCardIndex < state.deck.length - 1) {
+    state.currentCardIndex++;
+  }
+};
+
 const sessionSlice = createSlice({
   name: 'session',
   initialState,
@@ -340,24 +349,14 @@ const sessionSlice = createSlice({
     },
     answerCorrect: (state) => {
       state.inProgress = true;
-      state.results[state.currentCardIndex].isCorrect = true;
-      state.results[state.currentCardIndex].isFinished = true;
-      state.attempts = initialState.attempts;
-      if (state.currentCardIndex < state.deck.length - 1) {
-        state.currentCardIndex++;
-      }
+      updateResults(state, true);
     },
     answerWrong: (state) => {
       state.inProgress = true;
       state.attempts--;
       state.results[state.currentCardIndex].mistakes++;
       if (state.attempts < 1) {
-        state.results[state.currentCardIndex].isCorrect = false;
-        state.results[state.currentCardIndex].isFinished = true;
-        state.attempts = initialState.attempts;
-        if (state.currentCardIndex < state.deck.length - 1) {
-          state.currentCardIndex++;
-        }
+        updateResults(state, false);
       }
     },
     animate: (state, action) => {
