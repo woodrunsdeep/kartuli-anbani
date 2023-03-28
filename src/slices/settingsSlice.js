@@ -8,14 +8,14 @@ const initialState = {
     radio: {
       type: 'radio',
       label: 'Options',
-      icon: '🔘',
+      icon: 'UiRadiosGrid',
       min: 3,
       max: 9,
     },
     text: {
       type: 'text',
       label: 'Text',
-      icon: '⌨️',
+      icon: 'InputCursorText',
     },
   },
   isVisible: false,
@@ -24,15 +24,15 @@ const initialState = {
   themes: {
     light: {
       type: 'light',
-      icon: '🌝',
+      icon: 'Moon',
     },
     system: {
       type: 'system',
-      icon: '🌗',
+      icon: 'Sun',
     },
     dark: {
       type: 'dark',
-      icon: '🌚',
+      icon: 'CircleHalf',
     },
   },
   attemptsGiven: 3,
@@ -44,6 +44,7 @@ const initialState = {
         en: 'a-z',
         ru: 'а-я',
       },
+      icon: 'SortAlphaDown',
     },
     reverse: {
       type: 'reverse',
@@ -51,6 +52,7 @@ const initialState = {
         en: 'z-a',
         ru: 'я-а',
       },
+      icon: 'SortAlphaDownAlt',
     },
     random: {
       type: 'random',
@@ -58,6 +60,7 @@ const initialState = {
         en: '🔀',
         ru: '🔀',
       },
+      icon: 'Shuffle',
     },
   },
 };

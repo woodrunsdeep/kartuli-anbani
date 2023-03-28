@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import { selectSettings, setVisibility } from './slices/settingsSlice';
 import { restart } from './slices/sessionSlice';
 import Dialog from './components/Dialog/Dialog';
+import Icon from './components/Icon/Icon';
 
 function App() {
   const { isVisible, deckOrder, theme } = useSelector(selectSettings);
@@ -19,8 +20,14 @@ function App() {
         <Carousel />
         <Controls>
           <div className="controls__actions">
-            <Button onClick={() => dispatch(setVisibility(true))}>⚙️</Button>
-            <Button onClick={() => dispatch(restart(deckOrder))}>♻️</Button>
+            <Button onClick={() => dispatch(setVisibility(true))}>
+              <Icon iconName="Sliders" />
+            </Button>
+            {inProgress ? (
+              <Button onClick={() => dispatch(restart(deckOrder))}>
+                <Icon iconName="ArrowCounterclockwise" />
+              </Button>
+            ) : null}
           </div>
           <Form className="controls__form" />
         </Controls>

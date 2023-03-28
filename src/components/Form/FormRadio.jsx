@@ -1,5 +1,5 @@
 function FormRadio({
-  value, label, id, name, ...props
+  children, value, label, id, name, ...props
 }) {
   return (
     <div className="form__radio-box">
@@ -13,7 +13,7 @@ function FormRadio({
         {...props}
       />
       <label htmlFor={id} className="form__radio-label button">
-        {label}
+        {children}
       </label>
     </div>
   );

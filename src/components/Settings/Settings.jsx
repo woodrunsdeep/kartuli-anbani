@@ -11,6 +11,7 @@ import {
   setTheme,
   setLanguage,
 } from '../../slices/settingsSlice';
+import Icon from '../Icon/Icon';
 
 function Settings() {
   const {
@@ -61,7 +62,9 @@ function Settings() {
                 name="theme"
                 defaultChecked={option.type === theme}
                 onChange={(evt) => dispatch(setTheme(evt.target.value))}
-              />
+              >
+                <Icon iconName={option.icon} />
+              </FormRadio>
             ))}
           </div>
         </div>
@@ -79,7 +82,9 @@ function Settings() {
                 name="inputMode"
                 defaultChecked={mode.type === inputMode}
                 onChange={(evt) => dispatch(setInputMode(evt.target.value))}
-              />
+              >
+                <Icon iconName={mode.icon} />
+              </FormRadio>
             ))}
           </div>
         </div>
@@ -106,7 +111,9 @@ function Settings() {
                 label={option.label[language]}
                 name="deckOrder"
                 defaultChecked={option.type === deckOrder}
-              />
+              >
+                <Icon iconName={option.icon} />
+              </FormRadio>
             ))}
           </div>
         </div>
