@@ -6,13 +6,14 @@ import Settings from './components/Settings/Settings';
 import Controls from './components/Controls/Controls';
 import Footer from './components/Footer/Footer';
 import { selectSettings, setVisibility } from './slices/settingsSlice';
-import { restart } from './slices/sessionSlice';
+import { restart, selectSession } from './slices/sessionSlice';
 import Dialog from './components/Dialog/Dialog';
 import Icon from './components/Icon/Icon';
 
 function App() {
   const { isVisible, deckOrder, theme } = useSelector(selectSettings);
   const dispatch = useDispatch();
+  const { inProgress } = useSelector(selectSession);
 
   return (
     <div className="content" data-theme={theme}>
