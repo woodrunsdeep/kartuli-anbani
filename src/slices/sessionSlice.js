@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAction, createSlice } from '@reduxjs/toolkit';
 import { shuffle } from '../utils/utils';
-import { settingsSlice } from './settingsSlice';
 
+const saveSettings = createAction('settings/saveSettings');
+const reset = createAction('settings/reset');
 const deck = [
   {
     id: 1,
@@ -363,8 +364,8 @@ const sessionSlice = createSlice({
       state.isAnimated = action.payload;
     },
   },
-  extraReducers: {
-    [settingsSlice.actions.saveSettings]: (state, action) => {
+  extraReducers: (builder) => {
+    builder.addCase(saveSettings, (state, action) => {
       if (!state.inProgress) {
         switch (action.payload.deckOrder) {
           case 'random':
@@ -382,8 +383,8 @@ const sessionSlice = createSlice({
         state.results = initialState.results;
         state.currentCardIndex = initialState.currentCardIndex;
       }
-    },
-    [settingsSlice.actions.reset]: () => initialState,
+    });
+    builder.addCase(reset, () => initialState);
   },
 });
 
