@@ -41,24 +41,24 @@ const initialState = {
     alphabetical: {
       type: 'alphabetical',
       label: {
-        en: 'a-z',
-        ru: 'а-я',
+        en: 'alphabetical',
+        ru: 'алфавитный',
       },
       icon: 'SortAlphaDown',
     },
     reverse: {
       type: 'reverse',
       label: {
-        en: 'z-a',
-        ru: 'я-а',
+        en: 'reverse',
+        ru: 'обратный',
       },
       icon: 'SortAlphaDownAlt',
     },
     random: {
       type: 'random',
       label: {
-        en: '🔀',
-        ru: '🔀',
+        en: 'случайный',
+        ru: 'случайный',
       },
       icon: 'Shuffle',
     },
