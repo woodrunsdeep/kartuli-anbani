@@ -31,9 +31,10 @@ function FormRadioGroup({ name, language }) {
           value={radio.name[language]}
           id={radio.id}
           key={radio.id}
-          label={radio.name[language]}
           name={name}
-        />
+        >
+          {radio.name[language]}
+        </FormRadio>
       ))}
     </div>
   );
