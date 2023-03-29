@@ -19,9 +19,8 @@
 
 .form__radio-box {
   display: flex;
-  flex-basis: 64px;
+  flex-basis: 30%;
   flex-grow: 1;
-  min-width: 60px;
 }
 
 .form__radio-label {
