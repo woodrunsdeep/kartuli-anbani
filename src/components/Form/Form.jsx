@@ -4,7 +4,7 @@ import FormInput from './FormInput';
 import FormRadioGroup from './FormRadioGroup';
 import './form.css';
 import { selectSettings } from '../../slices/settingsSlice';
-import { answerCorrect, answerWrong, selectSession, animate } from '../../slices/sessionSlice';
+import { answerCorrect, answerWrong, selectSession, selectGameOver, animate } from '../../slices/sessionSlice';
 
 function Form({ className }) {
   const classList = className ? `form ${className}` : 'form';
@@ -12,6 +12,7 @@ function Form({ className }) {
   const { language, inputMode } = useSelector(selectSettings);
   const { deck, currentCardIndex, attempts } = useSelector(selectSession);
   const answer = deck[currentCardIndex].name[language];
+  const isGameOver = useSelector(selectGameOver);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -40,7 +41,7 @@ function Form({ className }) {
   }
 
   return (
-    <form className={classList} onSubmit={handleSubmit} autoComplete="off">
+    <form className={classList} onSubmit={handleSubmit} autoComplete="off" inert={isGameOver ? '' : null}>
       <fieldset className="form__options">
         {inputMode === 'text' ? (
           <FormInput language={language} />
