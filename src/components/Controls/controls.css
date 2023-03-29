@@ -1,6 +1,6 @@
 .controls {
     display: flex;
-    gap: 20px;
+    gap: var(--gap-size-m);
     max-width: 370px;
     margin: 0 auto;
     padding: 10px 8px;
@@ -9,7 +9,7 @@
 .controls__actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap-size-s);
 }
 
 .controls__form {

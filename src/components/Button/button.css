@@ -7,16 +7,19 @@
     padding: 8px 16px;
 
     color: var(--font-color);
-    font-size: 18px;
 
     background-color: var(--card-bg-color);
     border: none;
-    border-radius: 18px;
+    border-radius: var(--border-radius-m);
     box-shadow: var(--shadow-elevation-low);
     cursor: pointer;
 
     transition: transform 100ms ease-in-out;
     -webkit-tap-highlight-color: transparent;
+}
+
+.button--medium {
+  font-size: var(--font-size-m);
 }
 
 .button:active {
@@ -28,6 +31,6 @@
 }
 
 .button:focus {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 3px;
+    outline: var(--outline-style-base);
+    outline-offset: var(--outline-offset);
 }

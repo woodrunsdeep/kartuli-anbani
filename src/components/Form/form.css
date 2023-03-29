@@ -1,17 +1,13 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: var(--gap-size-m);
 }
 
 .form__radio-group {
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--gap-size-s);
     justify-content: stretch;
-
-    font-size: 18px;
 }
 
 .form__radio-box {
@@ -27,14 +23,12 @@
 
 .form__button {
     width: 100%;
-
-    font-size: 24px;
 }
 
 .form__options {
     display: flex;
     flex-grow: 1;
-    gap: 10px;
+    gap: var(--gap-size-s);
     justify-content: space-between;
 
     height: auto;
@@ -55,14 +49,14 @@
     padding: 8px 16px;
 
     color: var(--font-color);
-    font-size: 24px;
+    font-size: var(--font-size-l);
     text-align: center;
     text-transform: lowercase;
 
     background-color: var(--card-bg-color);
 
     border: none;
-    border-radius: 18px;
+    border-radius: var(--border-radius-m);
     box-shadow: var(--shadow-elevation-low);
 }
 
@@ -71,13 +65,18 @@
     text-transform: none;
 }
 
-.form__input:focus {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 3px;
-}
-
 .form__input:focus::placeholder {
     color: transparent;
+}
+
+.form__lang-select {
+  color: var(--font-color);
+
+  background-color: var(--card-bg-color);
+
+  border: none;
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow-elevation-low);
 }
 
 .form__radio:checked ~ .form__radio-label {
@@ -86,9 +85,11 @@
     background-color: var(--color-accent);
 }
 
-.form__radio:focus ~ .form__radio-label {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
+.form__radio:focus ~ .form__radio-label,
+.form__lang-select:focus,
+.form__input:focus {
+  outline: var(--outline-style-base);
+  outline-offset: var(--outline-offset);
 }
 
 .form__radio-options {
@@ -101,19 +102,23 @@
 
 .form__actions {
   display: grid;
-  grid-template-columns: repeat(3, 90px);
-  justify-content: space-between;
+  gap: var(--gap-size-s);
 
   margin-top: 20px;
 }
 
 .form__range {
   margin: 0;
+  border-radius: var(--border-radius-s);
+}
+
+.form__range:focus {
+  outline: var(--outline-style-base);
 }
 
 .form__range-list {
   display: flex;
-  gap: 10px;
+  gap: var(--gap-size-s);
   justify-content: space-between;
 
   padding: 0 5px;
@@ -122,6 +127,7 @@
 .form__range-wrapper {
   display: flex;
   flex-direction: column;
+  gap: var(--gap-size-s);
 
   padding: 10px 15px;
 }
@@ -141,7 +147,7 @@
   color: var(--font-color-inverse);
 
   background-color: var(--color-bg);
-  border-radius: 20px;
+  border-radius: var(--border-radius-l);
   box-shadow: var(--shadow-elevation-medium);
 }
 
@@ -151,13 +157,13 @@
 
 .form__set {
   display: flex;
-  gap: 10px;
+  gap: var(--gap-size-s);
   align-items: center;
 }
 
 .form__setting {
   display: flex;
-  gap: 10px;
+  gap: var(--gap-size-s);
   align-items: center;
   justify-content: space-between;
 }

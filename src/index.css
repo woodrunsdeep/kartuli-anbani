@@ -34,8 +34,8 @@
     --border-radius-l: calc(var(--border-radius-s) * 4);
     --gap-size-s: 8px;
     --gap-size-m: calc(var(--gap-size-s) * 2);
-    --font-size-base: 18px;
-    --font-size-m: calc(var(--font-size-base) * 1.2);
+    --font-size-m: 1.2rem;
+    --font-size-l: 1.3rem;
 }
 
 .content {
@@ -88,6 +88,7 @@ fieldset {
 .page {
   margin: 0;
 
+  font-size: var(--font-size-m);
   font-family: "Noto Sans Georgian", Arial, sans-serif;
 }
 
