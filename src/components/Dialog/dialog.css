@@ -17,6 +17,7 @@
   transform: translateY(-1000px);
 
   opacity: 0;
+  backdrop-filter: blur(5px);
 
   transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
 }
