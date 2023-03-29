@@ -21,11 +21,11 @@ function App() {
         <Carousel />
         <Controls>
           <div className="controls__actions">
-            <Button onClick={() => dispatch(setVisibility(true))}>
+            <Button className="button-icon" onClick={() => dispatch(setVisibility(true))}>
               <Icon iconName="Sliders" aria-hidden="true" />
             </Button>
             {inProgress ? (
-              <Button onClick={() => dispatch(restart(deckOrder))}>
+              <Button className="button-icon" onClick={() => dispatch(restart(deckOrder))}>
                 <Icon iconName="ArrowCounterclockwise" aria-hidden="true" />
               </Button>
             ) : null}

@@ -1,0 +1,10 @@
+.button-icon {
+  width: 48px;
+  padding: 4px;
+}
+
+.button-icon--small {
+  width: 32px;
+  height: 32px;
+  min-height: unset;
+}

@@ -12,6 +12,7 @@ import {
   setLanguage,
 } from '../../slices/settingsSlice';
 import Icon from '../Icon/Icon';
+import '../../styles/button-icon.css';
 
 function Settings() {
   const {
@@ -55,6 +56,7 @@ function Settings() {
           <div className="form__set">
             {Object.values(themes).map((option) => (
               <FormRadio
+                className="button-icon"
                 value={option.type}
                 key={option.type}
                 id={option.type}
@@ -75,6 +77,7 @@ function Settings() {
           <div className="form__set">
             {Object.values(inputModes).map((mode) => (
               <FormRadio
+                className="button-icon"
                 value={mode.type}
                 key={mode.type}
                 id={mode.type}
@@ -105,6 +108,7 @@ function Settings() {
           <div className="form__set">
             {Object.values(deckOrderOptions).map((option) => (
               <FormRadio
+                className="button-icon"
                 value={option.type}
                 key={option.type}
                 id={option.type}
