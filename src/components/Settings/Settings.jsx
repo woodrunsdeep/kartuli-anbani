@@ -45,7 +45,7 @@ function Settings() {
       </Button>
         <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Language' : 'Язык'}</legend>
-          <select name="language" id="language" defaultValue={language} onChange={(evt) => dispatch(setLanguage(evt.target.value))}>
+          <select className="form__lang-select" name="language" id="language" defaultValue={language} onChange={(evt) => dispatch(setLanguage(evt.target.value))}>
             {languages.map((l) => (
               <option value={l} key={l}>{l}</option>
             ))}

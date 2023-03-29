@@ -70,6 +70,10 @@
 }
 
 .form__lang-select {
+  min-width: 48px;
+  min-height: 24px;
+  padding: 8px 6px;
+
   color: var(--font-color);
 
   background-color: var(--card-bg-color);
