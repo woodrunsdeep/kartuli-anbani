@@ -1,6 +1,12 @@
 .form {
   display: grid;
   gap: var(--gap-size-m);
+
+  transition: opacity 300ms ease-in-out;
+}
+
+.form[inert] {
+  opacity: 0.6;
 }
 
 .form__radio-group {
