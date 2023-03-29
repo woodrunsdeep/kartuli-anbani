@@ -63,7 +63,7 @@ function Settings() {
                 defaultChecked={option.type === theme}
                 onChange={(evt) => dispatch(setTheme(evt.target.value))}
               >
-                <Icon iconName={option.icon} />
+                <Icon iconName={option.icon} aria-hidden="true" />
               </FormRadio>
             ))}
           </div>
@@ -83,7 +83,7 @@ function Settings() {
                 defaultChecked={mode.type === inputMode}
                 onChange={(evt) => dispatch(setInputMode(evt.target.value))}
               >
-                <Icon iconName={mode.icon} />
+                <Icon iconName={mode.icon} aria-hidden="true" />
               </FormRadio>
             ))}
           </div>
@@ -112,7 +112,7 @@ function Settings() {
                 name="deckOrder"
                 defaultChecked={option.type === deckOrder}
               >
-                <Icon iconName={option.icon} />
+                <Icon iconName={option.icon} aria-hidden="true" />
               </FormRadio>
             ))}
           </div>

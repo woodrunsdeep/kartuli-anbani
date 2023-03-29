@@ -22,11 +22,11 @@ function App() {
         <Controls>
           <div className="controls__actions">
             <Button onClick={() => dispatch(setVisibility(true))}>
-              <Icon iconName="Sliders" />
+              <Icon iconName="Sliders" aria-hidden="true" />
             </Button>
             {inProgress ? (
               <Button onClick={() => dispatch(restart(deckOrder))}>
-                <Icon iconName="ArrowCounterclockwise" />
+                <Icon iconName="ArrowCounterclockwise" aria-hidden="true" />
               </Button>
             ) : null}
           </div>
