@@ -19,6 +19,11 @@ function Form({ className }) {
       .option.toLowerCase()
       .trim();
 
+    if (!guess) {
+      evt.target.reset();
+      throw new Error('Empty string is not a valid input');
+    }
+
     if (guess === answer) {
       dispatch(answerCorrect());
     } else {
