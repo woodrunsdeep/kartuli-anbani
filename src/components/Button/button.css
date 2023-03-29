@@ -15,7 +15,8 @@
     box-shadow: var(--shadow-elevation-low);
     cursor: pointer;
 
-    transition: transform 100ms ease-in-out;
+    transition: transform 100ms ease-in-out,
+                opacity 100ms ease-in-out;
     -webkit-tap-highlight-color: transparent;
 }
 
