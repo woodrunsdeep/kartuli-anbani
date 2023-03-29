@@ -1,5 +1,6 @@
 .form {
-    gap: var(--gap-size-m);
+  display: grid;
+  gap: var(--gap-size-m);
 }
 
 .form__radio-group {
