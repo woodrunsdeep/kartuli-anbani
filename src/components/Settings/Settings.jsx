@@ -76,6 +76,26 @@ function Settings() {
       </fieldset>
       <fieldset className="form__fieldset">
         <div className="form__setting">
+          <legend className="form__legend">{language === 'en' ? 'Deck Order' : 'Сортировка'}</legend>
+          <div className="form__set">
+            {Object.values(deckOrderOptions).map((option) => (
+              <FormRadio
+                className="button-icon"
+                value={option.type}
+                key={option.type}
+                id={option.type}
+                label={option.label[language]}
+                name="deckOrder"
+                defaultChecked={option.type === deckOrder}
+              >
+                <Icon iconName={option.icon} aria-hidden="true" />
+              </FormRadio>
+            ))}
+          </div>
+        </div>
+      </fieldset>
+      <fieldset className="form__fieldset">
+        <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Input Mode' : 'Способ ввода'}</legend>
           <div className="form__set">
             {Object.values(inputModes).map((mode) => (
@@ -104,26 +124,6 @@ function Settings() {
           defaultValue={optionsQty}
           id="optionsQty"
         />
-      </fieldset>
-      <fieldset className="form__fieldset">
-        <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Deck Order' : 'Сортировка'}</legend>
-          <div className="form__set">
-            {Object.values(deckOrderOptions).map((option) => (
-              <FormRadio
-                className="button-icon"
-                value={option.type}
-                key={option.type}
-                id={option.type}
-                label={option.label[language]}
-                name="deckOrder"
-                defaultChecked={option.type === deckOrder}
-              >
-                <Icon iconName={option.icon} aria-hidden="true" />
-              </FormRadio>
-            ))}
-          </div>
-        </div>
       </fieldset>
       <div className="form__actions">
         <Button type="submit">{language === 'en' ? 'Apply' : 'Применить'}</Button>
