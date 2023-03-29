@@ -3,7 +3,7 @@ import './button.css';
 function Button({
   type, className, children, ...props
 }) {
-  const classList = className ? `${className} button` : 'button';
+  const classList = className ? `button ${className}` : 'button';
   return (
     <button
       type={type || 'button'}

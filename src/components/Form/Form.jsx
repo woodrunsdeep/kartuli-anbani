@@ -48,7 +48,7 @@ function Form({ className }) {
           <FormRadioGroup language={language} name="option" />
         )}
       </fieldset>
-      <Button className="form__button" type="submit">
+      <Button className="form__button button--font-size-l" type="submit">
         {language === 'en' ? 'Submit' : 'Ответить'}
       </Button>
     </form>
