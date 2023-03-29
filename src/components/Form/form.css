@@ -115,6 +115,8 @@
 
 .form__actions {
   display: grid;
+  grid-auto-flow: column;
+  grid-column: 1 / -1;
   gap: var(--gap-size-s);
 
   margin-top: 20px;
