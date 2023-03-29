@@ -40,7 +40,9 @@ function Settings() {
       }}
     >
       <h2 className="form__title">{language === 'en' ? 'Game Settings' : 'Настройки игры'}</h2>
-      <fieldset>
+      <Button className="button-icon button-icon--small" aria-label={language === 'en' ? 'Close settings' : 'Закрыть настройки'} onClick={() => dispatch(setVisibility(false))}>
+        <Icon iconName="X" aria-hidden="true" />
+      </Button>
         <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Language' : 'Язык'}</legend>
           <select name="language" id="language" defaultValue={language} onChange={(evt) => dispatch(setLanguage(evt.target.value))}>
@@ -125,7 +127,6 @@ function Settings() {
       <div className="form__actions">
         <Button type="submit">{language === 'en' ? 'Apply' : 'Применить'}</Button>
         <Button type="reset" onClick={() => dispatch(reset())}>{language === 'en' ? 'Reset' : 'Сбросить'}</Button>
-        <Button onClick={() => dispatch(setVisibility(false))}>{language === 'en' ? 'Cancel' : 'Отмена'}</Button>
       </div>
     </form>
   );
