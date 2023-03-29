@@ -390,6 +390,13 @@ const sessionSlice = createSlice({
   },
 });
 
+export const selectGameOver = (state) => {
+  const answers = state.session.results.reduce(
+    (acc, curr) => (curr.isFinished ? acc + 1 : acc),
+    0,
+  );
+  return answers === state.session.deck.length;
+};
 export const selectSession = (state) => state.session;
 export const { restart, answerCorrect, answerWrong, animate } = sessionSlice.actions;
 export const sessionReducer = sessionSlice.reducer;
