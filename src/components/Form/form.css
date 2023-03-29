@@ -124,6 +124,7 @@
 
 .form__range {
   margin: 0;
+
   border-radius: var(--border-radius-s);
 }
 
