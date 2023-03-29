@@ -129,6 +129,7 @@
 
 .form__range:focus {
   outline: var(--outline-style-base);
+  outline-offset: var(--outline-offset);
 }
 
 .form__range-list {
