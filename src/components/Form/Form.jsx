@@ -42,7 +42,7 @@ function Form({ className }) {
 
   return (
     <form className={classList} onSubmit={handleSubmit} autoComplete="off" inert={isGameOver ? '' : null}>
-      <fieldset className="form__options">
+      <fieldset className="form__fieldset">
         {inputMode === 'text' ? (
           <FormInput language={language} />
         ) : (

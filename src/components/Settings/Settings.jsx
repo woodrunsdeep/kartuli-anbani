@@ -43,6 +43,7 @@ function Settings() {
       <Button className="button-icon button-icon--small" aria-label={language === 'en' ? 'Close settings' : 'Закрыть настройки'} onClick={() => dispatch(setVisibility(false))}>
         <Icon iconName="X" aria-hidden="true" />
       </Button>
+      <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Language' : 'Язык'}</legend>
           <select className="form__lang-select" name="language" id="language" defaultValue={language} onChange={(evt) => dispatch(setLanguage(evt.target.value))}>
@@ -52,7 +53,7 @@ function Settings() {
           </select>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Theme' : 'Тема'}</legend>
           <div className="form__set">
@@ -73,7 +74,7 @@ function Settings() {
           </div>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Input Mode' : 'Способ ввода'}</legend>
           <div className="form__set">
@@ -94,7 +95,7 @@ function Settings() {
           </div>
         </div>
       </fieldset>
-      <fieldset className="form__radio-options" disabled={inputMode === 'text' ? true : null}>
+      <fieldset className="form__fieldset" disabled={inputMode === 'text' ? true : null}>
         <legend className="form__legend">{language === 'en' ? 'Options Number' : 'Количество вариантов'}</legend>
         <FormRange
           min={inputModes.radio.min}
@@ -104,7 +105,7 @@ function Settings() {
           id="optionsQty"
         />
       </fieldset>
-      <fieldset>
+      <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Deck Order' : 'Сортировка'}</legend>
           <div className="form__set">

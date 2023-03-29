@@ -103,11 +103,13 @@
   outline-offset: var(--outline-offset);
 }
 
-.form__radio-options {
+.form__fieldset {
+  grid-column: 1 / -1;
+
   transition: opacity 250ms ease-in-out;
 }
 
-.form__radio-options:disabled {
+.form__fieldset:disabled {
   opacity: 0;
 }
 
