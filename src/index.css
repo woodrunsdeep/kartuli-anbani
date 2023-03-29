@@ -29,9 +29,18 @@
     --color-failed: #ffbd1f;
     --color-accent: var(--georgian-red-dark);
     --shadow-color: 5deg 79% 22%;
+    --border-radius-s: 4px;
+    --border-radius-m: calc(var(--border-radius-s) * 2);
+    --border-radius-l: calc(var(--border-radius-s) * 4);
+    --gap-size-s: 8px;
+    --gap-size-m: calc(var(--gap-size-s) * 2);
+    --font-size-base: 18px;
+    --font-size-m: calc(var(--font-size-base) * 1.2);
 }
 
 .content {
+  --outline-style-base: 2px solid var(--color-accent);
+  --outline-offset: 3px;
   --shadow-elevation-low:
     0.7px 0.8px 1.1px hsl(var(--shadow-color) / 0.62),
     1.2px 1.3px 1.8px -1.7px hsl(var(--shadow-color) / 0.51),
