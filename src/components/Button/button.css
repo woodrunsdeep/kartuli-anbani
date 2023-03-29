@@ -20,8 +20,8 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-.button--medium {
-  font-size: var(--font-size-m);
+.button--font-size-l {
+  font-size: var(--font-size-l);
 }
 
 .button:active {
