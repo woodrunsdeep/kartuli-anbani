@@ -75,7 +75,7 @@ function Settings() {
       </fieldset>
       <fieldset>
         <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Input Mode' : 'Режим ввода'}</legend>
+          <legend className="form__legend">{language === 'en' ? 'Input Mode' : 'Способ ввода'}</legend>
           <div className="form__set">
             {Object.values(inputModes).map((mode) => (
               <FormRadio
