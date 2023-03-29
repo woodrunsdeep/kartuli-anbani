@@ -152,6 +152,7 @@
 }
 
 .form__settings {
+  grid-template-columns: 1fr auto;
   min-width: 345px;
   padding: 30px 20px;
 
