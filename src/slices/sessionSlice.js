@@ -345,6 +345,8 @@ const sessionSlice = createSlice({
         default:
           return state;
       }
+      state.attempts = initialState.attempts;
+      state.inProgress = initialState.inProgress;
       state.results = initialState.results;
       state.currentCardIndex = initialState.currentCardIndex;
     },
