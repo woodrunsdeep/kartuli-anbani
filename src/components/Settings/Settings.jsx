@@ -123,8 +123,8 @@ function Settings() {
         </div>
       </fieldset>
       <div className="form__actions">
-        <Button type="submit">{language === 'en' ? 'Ok' : 'Ок'}</Button>
-        <Button type="reset" onClick={() => dispatch(reset())}>{language === 'en' ? 'Reset' : 'Сброс'}</Button>
+        <Button type="submit">{language === 'en' ? 'Apply' : 'Применить'}</Button>
+        <Button type="reset" onClick={() => dispatch(reset())}>{language === 'en' ? 'Reset' : 'Сбросить'}</Button>
         <Button onClick={() => dispatch(setVisibility(false))}>{language === 'en' ? 'Cancel' : 'Отмена'}</Button>
       </div>
     </form>
