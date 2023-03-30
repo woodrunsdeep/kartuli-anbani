@@ -1,23 +1,23 @@
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    margin: 0;
-    padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin: 0;
+  padding: 8px 16px;
 
-    color: var(--font-color);
-    font-size: inherit;
+  color: var(--font-color);
+  font-size: inherit;
 
-    background-color: var(--card-bg-color);
-    border: none;
-    border-radius: var(--border-radius-m);
-    box-shadow: var(--shadow-elevation-low);
-    cursor: pointer;
+  background-color: var(--card-bg-color);
+  border: none;
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow-elevation-low);
+  cursor: pointer;
 
-    transition: transform 100ms ease-in-out,
-                opacity 100ms ease-in-out;
-    -webkit-tap-highlight-color: transparent;
+  transition: transform 100ms ease-in-out,
+              opacity 100ms ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .button--font-size-l {
@@ -25,14 +25,14 @@
 }
 
 .button:active {
-    color: #fff;
+  color: #fff;
 
-    background-color: var(--color-accent);
-    transform: scale(0.9);
-    opacity: 0.8;
+  background-color: var(--color-accent);
+  transform: scale(0.9);
+  opacity: 0.8;
 }
 
 .button:focus {
-    outline: var(--outline-style-base);
-    outline-offset: var(--outline-offset);
+  outline: var(--outline-style-base);
+  outline-offset: var(--outline-offset);
 }

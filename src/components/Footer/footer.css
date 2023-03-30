@@ -1,9 +1,9 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .footer__copyright {
@@ -14,5 +14,5 @@
 }
 
 .footer__link {
-    color: var(--font-color-inverse);
+  color: var(--font-color-inverse);
 }

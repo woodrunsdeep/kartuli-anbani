@@ -1,41 +1,41 @@
 @font-face {
-    font-weight: 400;
-    font-family: "Noto Sans Georgian";
-    font-style: normal;
-    src: url("./assets/fonts/NotoSansGeorgian-Regular.woff2") format("woff2"),
-        url("./assets/fonts/NotoSansGeorgian-Regular.woff") format("woff");
-    font-display: swap;
+  font-weight: 400;
+  font-family: "Noto Sans Georgian";
+  font-style: normal;
+  src: url("./assets/fonts/NotoSansGeorgian-Regular.woff2") format("woff2"),
+       url("./assets/fonts/NotoSansGeorgian-Regular.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
-    font-weight: 700;
-    font-family: "Noto Sans Georgian";
-    font-style: normal;
-    src: url("./assets/fonts/NotoSansGeorgian-Bold.woff2") format("woff2"),
-        url("./assets/fonts/NotoSansGeorgian-Bold.woff") format("woff");
-    font-display: swap;
+  font-weight: 700;
+  font-family: "Noto Sans Georgian";
+  font-style: normal;
+  src: url("./assets/fonts/NotoSansGeorgian-Bold.woff2") format("woff2"),
+       url("./assets/fonts/NotoSansGeorgian-Bold.woff") format("woff");
+  font-display: swap;
 }
 
 :root {
-    --georgian-red: #da291c;
-    --georgian-red-light: rgba(212, 26, 13, 0.6);
-    --georgian-red-dark: rgba(119, 9, 1, 0.8);
-    --color-bg: var(--georgian-red);
-    --font-color: #d13a3a;
-    --font-color-light: var(--georgian-red-light);
-    --font-color-inverse: #feffe3;
-    --card-bg-color: #feffe3;
-    --color-success: #d6e153;
-    --color-failed: #ffbd1f;
-    --color-accent: var(--georgian-red-dark);
-    --shadow-color: 5deg 79% 22%;
-    --border-radius-s: 4px;
-    --border-radius-m: calc(var(--border-radius-s) * 2);
-    --border-radius-l: calc(var(--border-radius-s) * 4);
-    --gap-size-s: 8px;
-    --gap-size-m: calc(var(--gap-size-s) * 2);
-    --font-size-m: 1.2rem;
-    --font-size-l: 1.3rem;
+  --georgian-red: #da291c;
+  --georgian-red-light: rgba(212, 26, 13, 0.6);
+  --georgian-red-dark: rgba(119, 9, 1, 0.8);
+  --color-bg: var(--georgian-red);
+  --font-color: #d13a3a;
+  --font-color-light: var(--georgian-red-light);
+  --font-color-inverse: #feffe3;
+  --card-bg-color: #feffe3;
+  --color-success: #d6e153;
+  --color-failed: #ffbd1f;
+  --color-accent: var(--georgian-red-dark);
+  --shadow-color: 5deg 79% 22%;
+  --border-radius-s: 4px;
+  --border-radius-m: calc(var(--border-radius-s) * 2);
+  --border-radius-l: calc(var(--border-radius-s) * 4);
+  --gap-size-s: 8px;
+  --gap-size-m: calc(var(--gap-size-s) * 2);
+  --font-size-m: 1.2rem;
+  --font-size-l: 1.3rem;
 }
 
 .content {
@@ -75,7 +75,7 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 fieldset {
@@ -100,20 +100,20 @@ fieldset {
 }
 
 .visually-hidden {
-    position: absolute;
+  position: absolute;
 
-    width: 1px;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  width: 1px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
-    white-space: nowrap;
+  white-space: nowrap;
 
-    border: 0;
+  border: 0;
 
-    clip: rect(0 0 0 0);
-  }
+  clip: rect(0 0 0 0);
+}
 
 @keyframes error {
   0% { transform: translateX(0) }

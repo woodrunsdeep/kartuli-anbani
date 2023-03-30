@@ -1,7 +1,7 @@
 .swiper {
-    display: flex;
-    align-items: center;
-    min-height: 560px;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
 }
 
 .swiper-slide {
@@ -9,9 +9,9 @@
 }
 
 .swiper-slide-transform {
-    perspective: 1000px;
+  perspective: 1000px;
 }
 
 .swiper-slide-active {
-    transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
 }

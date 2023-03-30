@@ -10,11 +10,11 @@
 }
 
 .form__radio-group {
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    gap: var(--gap-size-s);
-    justify-content: stretch;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: var(--gap-size-s);
+  justify-content: stretch;
 }
 
 .form__radio-box {
@@ -28,16 +28,16 @@
 }
 
 .form__button {
-    width: 100%;
+  width: 100%;
 }
 
 .form__options {
-    display: flex;
-    flex-grow: 1;
-    gap: var(--gap-size-s);
-    justify-content: space-between;
+  display: flex;
+  flex-grow: 1;
+  gap: var(--gap-size-s);
+  justify-content: space-between;
 
-    height: auto;
+  height: auto;
 }
 
 .form__options--column {
@@ -49,30 +49,30 @@
 }
 
 .form__input {
-    width: 100%;
-    min-height: 48px;
-    margin: 0;
-    padding: 8px 16px;
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  padding: 8px 16px;
 
-    color: var(--font-color);
-    font-size: var(--font-size-l);
-    text-align: center;
-    text-transform: lowercase;
+  color: var(--font-color);
+  font-size: var(--font-size-l);
+  text-align: center;
+  text-transform: lowercase;
 
-    background-color: var(--card-bg-color);
+  background-color: var(--card-bg-color);
 
-    border: none;
-    border-radius: var(--border-radius-m);
-    box-shadow: var(--shadow-elevation-low);
+  border: none;
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow-elevation-low);
 }
 
 .form__input::placeholder {
-    color: var(--font-color-light);
-    text-transform: none;
+  color: var(--font-color-light);
+  text-transform: none;
 }
 
 .form__input:focus::placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 .form__lang-select {
@@ -90,9 +90,9 @@
 }
 
 .form__radio:checked ~ .form__radio-label {
-    color: var(--font-color-inverse);
+  color: var(--font-color-inverse);
 
-    background-color: var(--color-accent);
+  background-color: var(--color-accent);
 }
 
 .form__radio:focus ~ .form__radio-label,
