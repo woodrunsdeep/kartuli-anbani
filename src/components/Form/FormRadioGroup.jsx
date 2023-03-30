@@ -32,6 +32,7 @@ function FormRadioGroup({ name, language }) {
           id={radio.id}
           key={radio.id}
           name={name}
+          required
         >
           {radio.name[language]}
         </FormRadio>
