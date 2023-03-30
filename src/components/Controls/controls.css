@@ -1,9 +1,10 @@
 .controls {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     gap: var(--gap-size-m);
     max-width: 370px;
     margin: 0 auto;
-    padding: 10px 8px;
+    padding: var(--gap-size-s);
 }
 
 .controls__actions {
@@ -11,8 +12,4 @@
   flex-direction: column;
   gap: var(--gap-size-s);
   justify-content: space-between;
-}
-
-.controls__form {
-  flex-grow: 1;
 }
