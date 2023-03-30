@@ -30,7 +30,7 @@ function App() {
               </Button>
             ) : null}
           </div>
-          <Form className="controls__form" />
+          <Form />
         </Controls>
         <Footer />
       </div>
