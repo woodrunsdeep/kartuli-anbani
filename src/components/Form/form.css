@@ -11,10 +11,8 @@
 
 .form__radio-group {
   display: flex;
-  flex-grow: 1;
   flex-wrap: wrap;
   gap: var(--gap-size-s);
-  justify-content: stretch;
 }
 
 .form__radio-box {
