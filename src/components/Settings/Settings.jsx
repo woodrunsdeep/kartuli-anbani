@@ -14,7 +14,7 @@ import Icon from '../Icon/Icon';
 import '../../styles/button-icon.css';
 import FormRadioSet from '../Form/FormRadioSet';
 
-function Settings() {
+function Settings({ closeModal }) {
   const {
     inputMode,
     optionsQty,
@@ -37,7 +37,7 @@ function Settings() {
       onSubmit={(evt) => {
         evt.preventDefault();
         const data = Object.fromEntries(new FormData(evt.target));
-        dispatch(setVisibility(false));
+        closeModal();
         dispatch(saveSettings(data));
       }}
     >
@@ -47,7 +47,7 @@ function Settings() {
       <Button
         className="button-icon button-icon--small"
         aria-label={language === 'en' ? 'Close settings' : 'Закрыть настройки'}
-        onClick={() => dispatch(setVisibility(false))}
+        onClick={() => closeModal()}
       >
         <Icon iconName="X" aria-hidden="true" />
       </Button>

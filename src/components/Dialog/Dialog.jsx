@@ -1,7 +1,10 @@
+import { forwardRef } from 'react';
 import './dialog.css';
 
-export default function Dialog({ children, open, ...props }) {
-  return (
-    <dialog className="dialog" open={open} {...props}>{children}</dialog>
-  );
-}
+const Dialog = forwardRef(({ children, ...props }, ref) => (
+  <dialog className="dialog" ref={ref} {...props}>
+    {children}
+  </dialog>
+));
+
+export default Dialog;

@@ -161,8 +161,6 @@
   color: var(--font-color-inverse);
 
   background-color: var(--color-bg);
-  border-radius: var(--border-radius-l);
-  box-shadow: var(--shadow-elevation-medium);
 }
 
 .form__setting-title {
