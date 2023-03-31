@@ -9,10 +9,15 @@
   opacity: 0.6;
 }
 
-.form__radio-group {
+.form__radio-set {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-size-s);
+
+  margin-block: 0;
+  padding-left: 0;
+
+  list-style: none;
 }
 
 .form__radio-box {
@@ -166,12 +171,6 @@
 
 .form__setting-title {
   text-transform: capitalize;
-}
-
-.form__set {
-  display: flex;
-  gap: var(--gap-size-s);
-  align-items: center;
 }
 
 .form__setting {
