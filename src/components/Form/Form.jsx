@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../Button/Button';
 import FormInput from './FormInput';
-import FormRadioGroup from './FormRadioGroup';
+import FormAnswers from './FormAnswers';
 import './form.css';
 import { selectSettings } from '../../slices/settingsSlice';
 import { answerCorrect, answerWrong, selectSession, selectGameOver, animate } from '../../slices/sessionSlice';
@@ -46,7 +46,7 @@ function Form({ className }) {
         {inputMode === 'text' ? (
           <FormInput language={language} />
         ) : (
-          <FormRadioGroup language={language} name="option" />
+          <FormAnswers language={language} name="option" />
         )}
       </fieldset>
       <Button className="form__button button--font-size-l" type="submit">

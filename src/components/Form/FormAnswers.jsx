@@ -5,7 +5,7 @@ import { selectSettings } from '../../slices/settingsSlice';
 import { shuffle } from '../../utils/utils';
 import FormRadioSet from './FormRadioSet';
 
-function FormRadioGroup() {
+function FormAnswers() {
   const { deck, currentCardIndex } = useSelector(selectSession);
   const { optionsQty } = useSelector(selectSettings);
   const [options, setOptions] = useState([]);
@@ -29,4 +29,4 @@ function FormRadioGroup() {
   );
 }
 
-export default FormRadioGroup;
+export default FormAnswers;
