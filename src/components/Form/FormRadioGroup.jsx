@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import { selectSession } from '../../slices/sessionSlice';
 import { selectSettings } from '../../slices/settingsSlice';
 import { shuffle } from '../../utils/utils';
-import FormRadio from './FormRadio';
+import FormRadioSet from './FormRadioSet';
 
-function FormRadioGroup({ name, language }) {
+function FormRadioGroup() {
   const { deck, currentCardIndex } = useSelector(selectSession);
   const { optionsQty } = useSelector(selectSettings);
   const [options, setOptions] = useState([]);
@@ -25,19 +25,7 @@ function FormRadioGroup({ name, language }) {
     generateOptions(deck);
   }, [deck, currentCardIndex, optionsQty]);
   return (
-    <div className="form__radio-group">
-      {options.map((radio) => (
-        <FormRadio
-          value={radio.name[language]}
-          id={radio.id}
-          key={radio.id}
-          name={name}
-          required
-        >
-          {radio.name[language]}
-        </FormRadio>
-      ))}
-    </div>
+    <FormRadioSet options={options} name="option" required />
   );
 }
 

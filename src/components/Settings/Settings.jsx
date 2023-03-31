@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../Button/Button';
-import FormRadio from '../Form/FormRadio';
 import FormRange from '../Form/FormRange';
 import {
   setInputMode,
@@ -13,6 +12,7 @@ import {
 } from '../../slices/settingsSlice';
 import Icon from '../Icon/Icon';
 import '../../styles/button-icon.css';
+import FormRadioSet from '../Form/FormRadioSet';
 
 function Settings() {
   const {
@@ -56,63 +56,40 @@ function Settings() {
       <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">{language === 'en' ? 'Theme' : 'Тема'}</legend>
-          <div className="form__set">
-            {Object.values(themes).map((option) => (
-              <FormRadio
-                className="button-icon"
-                value={option.type}
-                key={option.type}
-                id={option.type}
-                label={option.icon}
-                name="theme"
-                defaultChecked={option.type === theme}
-                onChange={(evt) => dispatch(setTheme(evt.target.value))}
-              >
-                <Icon iconName={option.icon} aria-hidden="true" />
-              </FormRadio>
-            ))}
-          </div>
+          <FormRadioSet
+            currentState={theme}
+            options={themes}
+            name="theme"
+            iconOnly
+            onChange={(evt) => dispatch(setTheme(evt.target.value))}
+          />
         </div>
       </fieldset>
       <fieldset className="form__fieldset">
         <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Deck Order' : 'Сортировка'}</legend>
-          <div className="form__set">
-            {Object.values(deckOrderOptions).map((option) => (
-              <FormRadio
-                className="button-icon"
-                value={option.type}
-                key={option.type}
-                id={option.type}
-                label={option.label[language]}
-                name="deckOrder"
-                defaultChecked={option.type === deckOrder}
-              >
-                <Icon iconName={option.icon} aria-hidden="true" />
-              </FormRadio>
-            ))}
-          </div>
+          <legend className="form__legend">
+            {language === 'en' ? 'Deck Order' : 'Сортировка'}
+          </legend>
+          <FormRadioSet
+            currentState={deckOrder}
+            options={deckOrderOptions}
+            name="deckOrder"
+            iconOnly
+          />
         </div>
       </fieldset>
       <fieldset className="form__fieldset">
         <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Input Mode' : 'Способ ввода'}</legend>
-          <div className="form__set">
-            {Object.values(inputModes).map((mode) => (
-              <FormRadio
-                className="button-icon"
-                value={mode.type}
-                key={mode.type}
-                id={mode.type}
-                label={mode.icon}
-                name="inputMode"
-                defaultChecked={mode.type === inputMode}
-                onChange={(evt) => dispatch(setInputMode(evt.target.value))}
-              >
-                <Icon iconName={mode.icon} aria-hidden="true" />
-              </FormRadio>
-            ))}
-          </div>
+          <legend className="form__legend">
+            {language === 'en' ? 'Input Mode' : 'Способ ввода'}
+          </legend>
+          <FormRadioSet
+            currentState={inputMode}
+            options={inputModes}
+            name="inputMode"
+            iconOnly
+            onChange={(evt) => dispatch(setInputMode(evt.target.value))}
+          />
         </div>
       </fieldset>
       <fieldset className="form__fieldset" disabled={inputMode === 'text' ? true : null}>
