@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 import Button from '../Button/Button';
 import FormRange from '../Form/FormRange';
 import {
-  setInputMode,
   selectSettings,
   setVisibility,
   saveSettings,
@@ -27,6 +27,8 @@ function Settings() {
     theme,
   } = useSelector(selectSettings);
   const dispatch = useDispatch();
+
+  const [isInputRadio, setIsInputRadio] = useState(inputMode === 'radio');
 
   return (
     <form
@@ -104,11 +106,11 @@ function Settings() {
             options={inputModes}
             name="inputMode"
             iconOnly
-            onChange={(evt) => dispatch(setInputMode(evt.target.value))}
+            onChange={() => setIsInputRadio((state) => !state)}
           />
         </div>
       </fieldset>
-      <fieldset className="form__fieldset" disabled={inputMode === 'text' ? true : null}>
+      <fieldset className="form__fieldset" disabled={isInputRadio ? null : true}>
         <legend className="form__legend">
           {language === 'en' ? 'Options Number' : 'Количество вариантов'}
         </legend>
