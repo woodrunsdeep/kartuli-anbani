@@ -39,16 +39,32 @@ function Settings() {
         dispatch(saveSettings(data));
       }}
     >
-      <h2 className="form__title">{language === 'en' ? 'Game Settings' : 'Настройки игры'}</h2>
-      <Button className="button-icon button-icon--small" aria-label={language === 'en' ? 'Close settings' : 'Закрыть настройки'} onClick={() => dispatch(setVisibility(false))}>
+      <h2 className="form__title">
+        {language === 'en' ? 'Game Settings' : 'Настройки игры'}
+      </h2>
+      <Button
+        className="button-icon button-icon--small"
+        aria-label={language === 'en' ? 'Close settings' : 'Закрыть настройки'}
+        onClick={() => dispatch(setVisibility(false))}
+      >
         <Icon iconName="X" aria-hidden="true" />
       </Button>
       <fieldset className="form__fieldset">
         <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Language' : 'Язык'}</legend>
-          <select className="form__lang-select" name="language" id="language" defaultValue={language} onChange={(evt) => dispatch(setLanguage(evt.target.value))}>
+          <legend className="form__legend">
+            {language === 'en' ? 'Language' : 'Язык'}
+          </legend>
+          <select
+            className="form__lang-select"
+            name="language"
+            id="language"
+            defaultValue={language}
+            onChange={(evt) => dispatch(setLanguage(evt.target.value))}
+          >
             {languages.map((l) => (
-              <option value={l} key={l}>{l}</option>
+              <option value={l} key={l}>
+                {l}
+              </option>
             ))}
           </select>
         </div>
@@ -93,7 +109,9 @@ function Settings() {
         </div>
       </fieldset>
       <fieldset className="form__fieldset" disabled={inputMode === 'text' ? true : null}>
-        <legend className="form__legend">{language === 'en' ? 'Options Number' : 'Количество вариантов'}</legend>
+        <legend className="form__legend">
+          {language === 'en' ? 'Options Number' : 'Количество вариантов'}
+        </legend>
         <FormRange
           min={inputModes.radio.min}
           max={inputModes.radio.max}
@@ -104,7 +122,9 @@ function Settings() {
       </fieldset>
       <div className="form__actions">
         <Button type="submit">{language === 'en' ? 'Apply' : 'Применить'}</Button>
-        <Button type="reset" onClick={() => dispatch(reset())}>{language === 'en' ? 'Reset' : 'Сбросить'}</Button>
+        <Button type="reset" onClick={() => dispatch(reset())}>
+          {language === 'en' ? 'Reset' : 'Сбросить'}
+        </Button>
       </div>
     </form>
   );

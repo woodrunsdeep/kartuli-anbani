@@ -4,7 +4,13 @@ import FormInput from './FormInput';
 import FormAnswers from './FormAnswers';
 import './form.css';
 import { selectSettings } from '../../slices/settingsSlice';
-import { answerCorrect, answerWrong, selectSession, selectGameOver, animate } from '../../slices/sessionSlice';
+import {
+  answerCorrect,
+  answerWrong,
+  selectSession,
+  selectGameOver,
+  animate,
+} from '../../slices/sessionSlice';
 
 function Form({ className }) {
   const classList = className ? `form ${className}` : 'form';
@@ -41,7 +47,12 @@ function Form({ className }) {
   }
 
   return (
-    <form className={classList} onSubmit={handleSubmit} autoComplete="off" inert={isGameOver ? '' : null}>
+    <form
+      className={classList}
+      onSubmit={handleSubmit}
+      autoComplete="off"
+      inert={isGameOver ? '' : null}
+    >
       <fieldset className="form__fieldset">
         {inputMode === 'text' ? (
           <FormInput language={language} />
