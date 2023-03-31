@@ -35,23 +35,21 @@ function App() {
       data-theme={theme}
       onClick={(evt) => handleClickOutsideModal(evt)}
     >
-      <div>
-        <Carousel />
-        <Controls>
-          <div className="controls__actions">
-            <Button className="button-icon" onClick={showModal}>
-              <Icon iconName="Sliders" aria-hidden="true" />
+      <Carousel />
+      <Controls>
+        <div className="controls__actions">
+          <Button className="button-icon" onClick={showModal}>
+            <Icon iconName="Sliders" aria-hidden="true" />
+          </Button>
+          {inProgress ? (
+            <Button className="button-icon" onClick={() => dispatch(restart(deckOrder))}>
+              <Icon iconName="ArrowCounterclockwise" aria-hidden="true" />
             </Button>
-            {inProgress ? (
-              <Button className="button-icon" onClick={() => dispatch(restart(deckOrder))}>
-                <Icon iconName="ArrowCounterclockwise" aria-hidden="true" />
-              </Button>
-            ) : null}
-          </div>
-          <Form />
-        </Controls>
-        <Footer />
-      </div>
+          ) : null}
+        </div>
+        <Form />
+      </Controls>
+      <Footer />
       <Dialog ref={dialogRef}>
         <Settings closeModal={closeModal} />
       </Dialog>
