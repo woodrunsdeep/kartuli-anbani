@@ -30,10 +30,6 @@
   flex-grow: 1;
 }
 
-.form__button {
-  width: 100%;
-}
-
 .form__options {
   display: flex;
   flex-grow: 1;
