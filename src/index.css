@@ -94,7 +94,6 @@ fieldset {
 
 .content {
   min-height: 100vh;
-  padding-bottom: 10px;
 
   background-color: var(--color-bg);
 }
