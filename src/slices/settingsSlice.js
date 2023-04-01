@@ -24,15 +24,15 @@ const initialState = {
   themes: {
     light: {
       type: 'light',
-      icon: 'Moon',
+      icon: 'Sun',
     },
     system: {
       type: 'system',
-      icon: 'Sun',
+      icon: 'CircleHalf',
     },
     dark: {
       type: 'dark',
-      icon: 'CircleHalf',
+      icon: 'Moon',
     },
   },
   attemptsGiven: 3,
