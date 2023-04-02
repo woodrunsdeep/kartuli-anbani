@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "title": "Game Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "deckOrder": "Deck Order",
+    "inputMode": "Input Mode",
+    "optionsQty": "Options Number",
+    "themes": {
+      "dark": "Dark",
+      "system": "System",
+      "light": "Light"
+    },
+    "deckOrderOptions": {
+      "alphabetical": "Alphabetical",
+      "reverse": "Reverse",
+      "random": "Random"
+    },
+    "actions": {
+      "close": "Close",
+      "apply": "Apply",
+      "reset": "Reset"
+    }
+  }
+}
