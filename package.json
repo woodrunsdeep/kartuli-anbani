@@ -15,9 +15,12 @@
   "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
+    "i18next": "^22.4.13",
+    "i18next-xhr-backend": "^3.2.2",
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.10.2",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.0",
     "react-redux": "^8.0.5",
     "react-transition-group": "^4.4.5",
     "swiper": "^8.4.7"
