@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from '../Button/Button';
 import FormRange from '../Form/FormRange';
 import {
@@ -28,6 +29,11 @@ function Settings({ closeModal }) {
   } = useSelector(selectSettings);
   const dispatch = useDispatch();
 
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (code) => {
+    i18n.changeLanguage(code);
+  };
+
   const [isInputRadio, setIsInputRadio] = useState(inputMode === 'radio');
 
   return (
@@ -42,11 +48,11 @@ function Settings({ closeModal }) {
       }}
     >
       <h2 className="form__title">
-        {language === 'en' ? 'Game Settings' : 'Настройки игры'}
+        {t('settings.title')}
       </h2>
       <Button
         className="button-icon button-icon--small"
-        aria-label={language === 'en' ? 'Close settings' : 'Закрыть настройки'}
+        aria-label={t('settings.actions.close')}
         onClick={() => closeModal()}
       >
         <Icon iconName="X" aria-hidden="true" />
@@ -54,14 +60,14 @@ function Settings({ closeModal }) {
       <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">
-            {language === 'en' ? 'Language' : 'Язык'}
+            {t('settings.language')}
           </legend>
           <select
             className="form__lang-select"
             name="language"
             id="language"
             defaultValue={language}
-            onChange={(evt) => dispatch(setLanguage(evt.target.value))}
+            onChange={(evt) => changeLanguage(evt.target.value)}
           >
             {languages.map((l) => (
               <option value={l} key={l}>
@@ -73,7 +79,9 @@ function Settings({ closeModal }) {
       </fieldset>
       <fieldset className="form__fieldset">
         <div className="form__setting">
-          <legend className="form__legend">{language === 'en' ? 'Theme' : 'Тема'}</legend>
+          <legend className="form__legend">
+            {t('settings.theme')}
+          </legend>
           <FormRadioSet
             currentState={theme}
             options={themes}
@@ -86,7 +94,7 @@ function Settings({ closeModal }) {
       <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">
-            {language === 'en' ? 'Deck Order' : 'Сортировка'}
+            {t('settings.deckOrder')}
           </legend>
           <FormRadioSet
             currentState={deckOrder}
@@ -99,7 +107,7 @@ function Settings({ closeModal }) {
       <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">
-            {language === 'en' ? 'Input Mode' : 'Способ ввода'}
+            {t('settings.inputMode')}
           </legend>
           <FormRadioSet
             currentState={inputMode}
@@ -112,7 +120,7 @@ function Settings({ closeModal }) {
       </fieldset>
       <fieldset className="form__fieldset" disabled={isInputRadio ? null : true}>
         <legend className="form__legend">
-          {language === 'en' ? 'Options Number' : 'Количество вариантов'}
+          {t('settings.optionsQty')}
         </legend>
         <FormRange
           min={inputModes.radio.min}
@@ -123,9 +131,11 @@ function Settings({ closeModal }) {
         />
       </fieldset>
       <div className="form__actions">
-        <Button type="submit">{language === 'en' ? 'Apply' : 'Применить'}</Button>
+        <Button type="submit">
+          {t('settings.actions.apply')}
+        </Button>
         <Button type="reset" onClick={() => dispatch(reset())}>
-          {language === 'en' ? 'Reset' : 'Сбросить'}
+          {t('settings.actions.reset')}
         </Button>
       </div>
     </form>

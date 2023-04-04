@@ -19,7 +19,14 @@
     "actions": {
       "close": "Close",
       "apply": "Apply",
-      "reset": "Reset"
+      "reset": "Reset",
+      "open": "Open"
     }
+  },
+  "copyright": {
+    "author": "Gleb Dmitriev"
+  },
+  "links": {
+    "github": "Code on Github"
   }
 }

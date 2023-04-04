@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import { selectSettings } from '../../slices/settingsSlice';
 import './footer.css';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
-  const { language } = useSelector(selectSettings);
-  const author = language === 'en' ? 'Gleb Dmitriev' : 'Глеб Дмитриев';
+  const { t } = useTranslation();
+  const author = t('copyright.author');
   const year = (new Date()).getFullYear();
   const copyRight = `© ${author} - ${year}`;
   return (
@@ -16,7 +17,7 @@ function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        {language === 'en' ? 'Code on Github' : 'Код на Гитхабе'}
+        {t('links.github')}
       </a>
     </footer>
   );
