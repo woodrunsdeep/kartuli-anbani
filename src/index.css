@@ -36,8 +36,8 @@
   --border-radius-l: calc(var(--border-radius-s) * 4);
   --gap-size-s: 8px;
   --gap-size-m: calc(var(--gap-size-s) * 2);
-  --font-size-m: 1.2rem;
-  --font-size-l: 1.3rem;
+  --font-size-m: 1.15rem;
+  --font-size-l: 1.35rem;
 }
 
 .content {
