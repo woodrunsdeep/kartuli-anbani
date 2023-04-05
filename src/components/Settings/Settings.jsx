@@ -12,24 +12,20 @@ import {
 } from '../../slices/settingsSlice';
 import Icon from '../Icon/Icon';
 import FormRadioSet from '../Form/FormRadioSet';
-import settingsConfig from './settingsConfig';
 
 function Settings({ closeModal }) {
   const {
     inputMode,
     optionsQty,
+    inputModes,
     language,
+    languages,
     deckOrder,
+    deckOrderOptions,
+    themes,
     theme,
   } = useSelector(selectSettings);
   const dispatch = useDispatch();
-
-  const {
-    inputModes,
-    languages,
-    deckOrderOptions,
-    themes,
-  } = settingsConfig;
 
   const { t, i18n } = useTranslation();
   const changeLanguage = (code) => {
