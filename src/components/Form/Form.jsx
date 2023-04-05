@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 import Button from '../Button/Button';
 import FormInput from './FormInput';
@@ -14,6 +15,7 @@ import {
 } from '../../slices/sessionSlice';
 
 function Form({ className }) {
+  const { t } = useTranslation();
   const classList = clsx('form', className);
   const dispatch = useDispatch();
   const { language, inputMode } = useSelector(selectSettings);
@@ -62,7 +64,7 @@ function Form({ className }) {
         )}
       </fieldset>
       <Button className="form__button" type="submit">
-        {language === 'en' ? 'Submit' : 'Ответить'}
+        {t('actions.submit')}
       </Button>
     </form>
   );
