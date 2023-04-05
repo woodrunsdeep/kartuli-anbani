@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import clsx from 'clsx';
 import { selectSettings } from '../../slices/settingsSlice';
 import Icon from '../Icon/Icon';
 import FormRadio from './FormRadio';
@@ -9,12 +10,14 @@ export default function FormRadioSet({
   iconOnly,
   required,
   currentState,
+  className,
   ...props
 }) {
   const { language } = useSelector(selectSettings);
+  const classList = clsx('form__radio-set', className);
 
   return (
-    <div className="form__radio-set">
+    <div className={classList}>
       {Object.values(options).map((option) => {
         const value = Object.prototype.hasOwnProperty.call(option, 'name')
           ? option.name[language]
@@ -24,7 +27,7 @@ export default function FormRadioSet({
           : option.type;
         return (
           <FormRadio
-            className={iconOnly ? 'button-icon' : null}
+            className={clsx({ 'button--icon-only': iconOnly })}
             value={value}
             key={id}
             id={id}

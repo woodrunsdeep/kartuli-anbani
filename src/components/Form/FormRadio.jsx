@@ -1,8 +1,9 @@
+import clsx from "clsx";
+
 function FormRadio({
   children, value, label, id, name, className, required, ...props
 }) {
-  let labelClassList = 'form__radio-label button';
-  labelClassList = className ? `${labelClassList} ${className}` : labelClassList;
+  const labelClassList = clsx('form__radio-label button', className);
 
   return (
     <div className="form__radio-box">

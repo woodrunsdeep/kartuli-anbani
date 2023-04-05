@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import clsx from 'clsx';
 import Button from '../Button/Button';
 import FormInput from './FormInput';
 import FormAnswers from './FormAnswers';
@@ -13,7 +14,7 @@ import {
 } from '../../slices/sessionSlice';
 
 function Form({ className }) {
-  const classList = className ? `form ${className}` : 'form';
+  const classList = clsx('form', className);
   const dispatch = useDispatch();
   const { language, inputMode } = useSelector(selectSettings);
   const { deck, currentCardIndex, attempts } = useSelector(selectSession);

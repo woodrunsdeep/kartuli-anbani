@@ -1,8 +1,13 @@
+import clsx from 'clsx';
 import * as icons from 'react-bootstrap-icons';
+import './icon.css';
 
-function Icon({ iconName, size = 24, ...props }) {
+function Icon({
+  iconName, isFluid, className, size = 24, ...props
+}) {
   const BootstrapIcon = icons[iconName];
-  return <BootstrapIcon size={size} {...props} />;
-};
+  const classList = clsx('icon', { 'icon--fluid': isFluid }, className);
+  return <BootstrapIcon className={classList} size={size} {...props} />;
+}
 
 export default Icon;

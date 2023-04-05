@@ -1,13 +1,13 @@
+import clsx from 'clsx';
 import './button.css';
 
 function Button({
   type, className, children, ...props
 }) {
-  const classList = className ? `button ${className}` : 'button';
   return (
     <button
       type={type || 'button'}
-      className={classList}
+      className={clsx('button', className)}
       {...props}
     >
       {children}
