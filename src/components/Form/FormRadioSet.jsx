@@ -37,7 +37,10 @@ export default function FormRadioSet({
             {...props}
           >
             {iconOnly ? (
-              <Icon iconName={option.icon} aria-hidden="true" />
+              <>
+                <Icon iconName={option.icon} aria-hidden="true" />
+                <span className="visually-hidden">{value}</span>
+              </>
             ) : (
               option.name[language]
             )}
