@@ -58,6 +58,15 @@
     33.5px 36.8px 49.6px -2.2px hsl(var(--shadow-color) / 0.49),
     57.9px 63.7px 85.9px -2.8px hsl(var(--shadow-color) / 0.44),
     94px 103.3px 139.3px -3.3px hsl(var(--shadow-color) / 0.39);
+  --shadow-elevation-medium-centered:
+    1px 1px 1.6px hsl(var(--shadow-color) / 0.36),
+    3.3px 3.3px 5.3px -0.8px hsl(var(--shadow-color) / 0.36),
+    8.2px 8.2px 13px -1.7px hsl(var(--shadow-color) / 0.36),
+    20px 20px 31.8px -2.5px hsl(var(--shadow-color) / 0.36),
+    -1px -1px 1.6px hsl(var(--shadow-color) / 0.36),
+    -3.3px -3.3px 5.3px -0.8px hsl(var(--shadow-color) / 0.36),
+    -8.2px -8.2px 13px -1.7px hsl(var(--shadow-color) / 0.36),
+    -20px -20px 31.8px -2.5px hsl(var(--shadow-color) / 0.36);
 }
 
 .content[data-theme="dark"] {

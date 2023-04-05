@@ -5,7 +5,7 @@
   border: none;
 
   border-radius: var(--border-radius-l);
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--shadow-elevation-medium-centered);
 }
 
 .dialog::backdrop {
