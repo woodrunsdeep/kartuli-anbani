@@ -14,7 +14,6 @@
   border-radius: var(--border-radius-m);
   box-shadow: var(--shadow-elevation-low);
   transform-style: preserve-3d;
-  cursor: pointer;
 
   transition: transform 400ms;
   -webkit-tap-highlight-color: transparent;
