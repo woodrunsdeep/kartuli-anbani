@@ -11,3 +11,7 @@
 .dialog::backdrop {
   backdrop-filter: blur(5px);
 }
+
+.form__range {
+  accent-color: var(--color-accent);
+}
