@@ -1,0 +1,138 @@
+@font-face {
+  font-weight: 400;
+  font-family: "Noto Sans Georgian";
+  font-style: normal;
+  src: url("./assets/fonts/NotoSansGeorgian-Regular.woff2") format("woff2"),
+       url("./assets/fonts/NotoSansGeorgian-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "Noto Sans Georgian";
+  font-style: normal;
+  src: url("./assets/fonts/NotoSansGeorgian-Bold.woff2") format("woff2"),
+       url("./assets/fonts/NotoSansGeorgian-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+  --georgian-red: #da291c;
+  --georgian-red-light: rgba(212, 26, 13, 0.6);
+  --georgian-red-dark: rgba(119, 9, 1, 0.8);
+  --color-white: hsl(0, 0%, 95%);
+  --color-black: #20201e;
+  --color-bg: var(--georgian-red);
+  --font-color: #d13a3a;
+  --font-color-light: var(--georgian-red-light);
+  --font-color-inverse: var(--color-white);
+  --card-bg-color: var(--color-white);
+  --color-success: #d6e153;
+  --color-failed: #ffbd1f;
+  --color-accent: var(--georgian-red-dark);
+  --shadow-color: 5deg 79% 25%;
+  --border-radius-s: 4px;
+  --border-radius-m: calc(var(--border-radius-s) * 2);
+  --border-radius-l: calc(var(--border-radius-s) * 4);
+  --gap-size-s: 8px;
+  --gap-size-m: calc(var(--gap-size-s) * 2);
+  --font-size-m: 1.15rem;
+  --font-size-l: 1.35rem;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  --outline-style-base: 2px solid var(--color-accent);
+  --outline-offset: 3px;
+  --shadow-elevation-low:
+    0.7px 0.8px 1.1px hsl(var(--shadow-color) / 0.62),
+    1.2px 1.3px 1.8px -1.7px hsl(var(--shadow-color) / 0.51),
+    3.3px 3.6px 4.9px -3.3px hsl(var(--shadow-color) / 0.41);
+  --shadow-elevation-medium:
+    0.7px 0.8px 1.1px hsl(var(--shadow-color) / 0.65),
+    2.2px 2.4px 3.2px -1.1px hsl(var(--shadow-color) / 0.57),
+    6.2px 6.9px 9.3px -2.2px hsl(var(--shadow-color) / 0.48),
+    16.5px 18.1px 24.4px -3.3px hsl(var(--shadow-color) / 0.4);
+  --shadow-elevation-high:
+    0.7px 0.8px 1.1px hsl(var(--shadow-color) / 0.69),
+    4.3px 4.8px 6.4px -0.6px hsl(var(--shadow-color) / 0.64),
+    9.3px 10.2px 13.8px -1.1px hsl(var(--shadow-color) / 0.59),
+    18.2px 19.9px 26.9px -1.7px hsl(var(--shadow-color) / 0.54),
+    33.5px 36.8px 49.6px -2.2px hsl(var(--shadow-color) / 0.49),
+    57.9px 63.7px 85.9px -2.8px hsl(var(--shadow-color) / 0.44),
+    94px 103.3px 139.3px -3.3px hsl(var(--shadow-color) / 0.39);
+  --shadow-elevation-medium-centered:
+    1px 1px 1.6px hsl(var(--shadow-color) / 0.36),
+    3.3px 3.3px 5.3px -0.8px hsl(var(--shadow-color) / 0.36),
+    8.2px 8.2px 13px -1.7px hsl(var(--shadow-color) / 0.36),
+    20px 20px 31.8px -2.5px hsl(var(--shadow-color) / 0.36),
+    -1px -1px 1.6px hsl(var(--shadow-color) / 0.36),
+    -3.3px -3.3px 5.3px -0.8px hsl(var(--shadow-color) / 0.36),
+    -8.2px -8.2px 13px -1.7px hsl(var(--shadow-color) / 0.36),
+    -20px -20px 31.8px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+.content[data-theme="dark"] {
+  --color-bg: var(--color-black);
+  --font-color: var(--color-black);
+  --font-color-inverse: #a8a8a8;
+  --color-accent: var(--color-white);
+  --card-bg-color: #939393;
+  --color-success: #588d56;
+  --font-color-light: #676767;
+  --color-failed: #8d6f28;
+  --shadow-color: 5deg 0% 22%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+.page {
+  margin: 0;
+
+  font-size: var(--font-size-m);
+  font-family: "Noto Sans Georgian", Arial, sans-serif;
+}
+
+.content {
+  min-height: 100vh;
+
+  background-color: var(--color-bg);
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+}
+
+@keyframes error {
+  0% { transform: translateX(0) }
+  20% { transform: translateX(5px) }
+  40% { transform: translateX(-5px) }
+  60% { transform: translateX(5px) }
+  80% { transform: translateX(-5px) }
+  100% { transform: translateX(0) }
+ }

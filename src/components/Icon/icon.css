@@ -1,0 +1,12 @@
+.icon {
+  max-width: 100%;
+  height: auto;
+}
+
+.icon--fluid {
+  width: clamp(14px, calc(5px + 4vw), 24px);
+}
+
+.icon--small {
+  width: 18px;
+}

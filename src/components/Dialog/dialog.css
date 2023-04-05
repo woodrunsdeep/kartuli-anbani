@@ -1,0 +1,17 @@
+.dialog {
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  border-radius: var(--border-radius-l);
+  box-shadow: var(--shadow-elevation-medium-centered);
+}
+
+.dialog::backdrop {
+  backdrop-filter: blur(5px);
+}
+
+.form__range {
+  accent-color: var(--color-accent);
+}

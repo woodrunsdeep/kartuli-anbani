@@ -1,0 +1,34 @@
+{
+  "settings": {
+    "title": "Настройки игры",
+    "language": "Язык",
+    "theme": "Тема",
+    "deckOrder": "Сортировка",
+    "inputMode": "Способ ввода",
+    "optionsQty": "Количество вариантов",
+    "themes": {
+      "dark": "Темная",
+      "system": "Системная",
+      "light": "Светлая"
+    },
+    "deckOrderOptions": {
+      "alphabetical": "Алфавитный",
+      "reverse": "Обратный",
+      "random": "Случайный"
+    }
+  },
+  "actions": {
+    "close": "Закрыть",
+    "apply": "Применить",
+    "reset": "Сбросить",
+    "open": "Открыть",
+    "submit": "Ответить",
+    "restart": "Начать заново"
+  },
+  "copyright": {
+    "author": "Глеб Дмитриев"
+  },
+  "links": {
+    "github": "Код на Гитхабе"
+  }
+}

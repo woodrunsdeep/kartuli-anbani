@@ -4,19 +4,48 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:js": "esbuild ./src/js/index.js --bundle --minify --outfile=script.min.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "rm -rf dist && npm run build:js && npx eleventy --serve --watch",
-    "build": "rm -rf dist && npm run build:js && npx eleventy"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "npx eslint src/**/*.jsx",
+    "lint:fix": "npx eslint src/**/*.jsx --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
-  },
   "dependencies": {
-    "esbuild": "0.16.10",
-    "swiper": "^8.4.5"
-  }
+    "@reduxjs/toolkit": "^1.9.3",
+    "clsx": "^1.2.1",
+    "i18next": "^22.4.13",
+    "i18next-xhr-backend": "^3.2.2",
+    "react": "^18.2.0",
+    "react-bootstrap-icons": "^1.10.2",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.0",
+    "react-redux": "^8.0.5",
+    "react-transition-group": "^4.4.5",
+    "swiper": "^8.4.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.4",
+    "stylelint": "^15.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-order": "^6.0.3",
+    "vite": "^4.1.0"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

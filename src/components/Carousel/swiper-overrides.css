@@ -1,0 +1,22 @@
+.swiper {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.swiper-slide {
+  height: auto;
+
+  transition: transform 450ms ease-in-out;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide-transform {
+  perspective: 1000px;
+}
+
+.swiper-slide-active {
+  transform: scale(1.1) !important;
+}
