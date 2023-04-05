@@ -84,9 +84,6 @@ export const settingsSlice = createSlice({
     setOptionsQty: (state, action) => {
       state.optonsNumber = action.payload;
     },
-    setVisibility: (state, action) => {
-      state.isVisible = action.payload;
-    },
     saveSettings: (state, action) => ({
       ...state,
       ...action.payload,
@@ -104,7 +101,6 @@ export const {
   setTheme,
   setDeckOrder,
   setOptionsQty,
-  setVisibility,
   saveSettings,
   reset,
 } = settingsSlice.actions;

@@ -5,7 +5,6 @@ import Button from '../Button/Button';
 import FormRange from '../Form/FormRange';
 import {
   selectSettings,
-  setVisibility,
   saveSettings,
   reset,
   setTheme,
