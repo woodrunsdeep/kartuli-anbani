@@ -88,6 +88,7 @@ function Settings({ closeModal }) {
             options={themes}
             name="theme"
             iconOnly
+            isFluid
             onChange={(evt) => dispatch(setTheme(evt.target.value))}
           />
         </div>
@@ -102,6 +103,7 @@ function Settings({ closeModal }) {
             options={deckOrderOptions}
             name="deckOrder"
             iconOnly
+            isFluid
           />
         </div>
       </fieldset>
@@ -115,6 +117,7 @@ function Settings({ closeModal }) {
             options={inputModes}
             name="inputMode"
             iconOnly
+            isFluid
             onChange={() => setIsInputRadio((state) => !state)}
           />
         </div>

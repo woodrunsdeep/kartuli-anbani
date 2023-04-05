@@ -11,6 +11,8 @@ export default function FormRadioSet({
   required,
   currentState,
   className,
+  isFluid,
+  size,
   ...props
 }) {
   const { language } = useSelector(selectSettings);
@@ -38,7 +40,7 @@ export default function FormRadioSet({
           >
             {iconOnly ? (
               <>
-                <Icon iconName={option.icon} aria-hidden="true" />
+                <Icon iconName={option.icon} isFluid={isFluid} size={size} aria-hidden="true" />
                 <span className="visually-hidden">{value}</span>
               </>
             ) : (
