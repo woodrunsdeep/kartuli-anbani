@@ -12,7 +12,6 @@ import {
   setLanguage,
 } from '../../slices/settingsSlice';
 import Icon from '../Icon/Icon';
-import '../../styles/button-icon.css';
 import FormRadioSet from '../Form/FormRadioSet';
 
 function Settings({ closeModal }) {
