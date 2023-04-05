@@ -15,13 +15,14 @@
       "alphabetical": "Alphabetical",
       "reverse": "Reverse",
       "random": "Random"
-    },
-    "actions": {
-      "close": "Close",
-      "apply": "Apply",
-      "reset": "Reset",
-      "open": "Open"
     }
+  },
+  "actions": {
+    "close": "Close",
+    "apply": "Apply",
+    "reset": "Reset",
+    "open": "Open",
+    "submit": "Submit"
   },
   "copyright": {
     "author": "Gleb Dmitriev"

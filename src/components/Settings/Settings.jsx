@@ -55,7 +55,7 @@ function Settings({ closeModal }) {
         </h2>
         <Button
           className="button--icon-only button--small"
-          aria-label={t('settings.actions.close')}
+          aria-label={t('actions.close')}
           onClick={() => closeModal()}
         >
           <Icon iconName="X" aria-hidden="true" isFluid />
@@ -139,10 +139,10 @@ function Settings({ closeModal }) {
       </fieldset>
       <div className="form__actions">
         <Button type="submit">
-          {t('settings.actions.apply')}
+          {t('actions.apply')}
         </Button>
         <Button type="reset" onClick={() => dispatch(reset())}>
-          {t('settings.actions.reset')}
+          {t('actions.reset')}
         </Button>
       </div>
     </form>
