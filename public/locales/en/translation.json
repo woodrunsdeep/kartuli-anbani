@@ -22,7 +22,8 @@
     "apply": "Apply",
     "reset": "Reset",
     "open": "Open",
-    "submit": "Submit"
+    "submit": "Submit",
+    "restart": "Restart"
   },
   "copyright": {
     "author": "Gleb Dmitriev"

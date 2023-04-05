@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import Carousel from './components/Carousel/Carousel';
 import Form from './components/Form/Form';
 import Button from './components/Button/Button';
@@ -15,7 +16,7 @@ function App() {
   const { deckOrder, theme } = useSelector(selectSettings);
   const dispatch = useDispatch();
   const { inProgress } = useSelector(selectSession);
-
+  const { t } = useTranslation();
   const dialogRef = useRef(null);
   const showModal = () => dialogRef.current.showModal();
   const closeModal = () => dialogRef.current.close();
@@ -38,11 +39,19 @@ function App() {
       <Carousel />
       <Controls>
         <div className="controls__actions">
-          <Button className="button-icon" onClick={showModal}>
+          <Button
+            className="button-icon"
+            onClick={showModal}
+            aria-label={t('settings.title')}
+          >
             <Icon iconName="Sliders" aria-hidden="true" />
           </Button>
           {inProgress ? (
-            <Button className="button-icon" onClick={() => dispatch(restart(deckOrder))}>
+            <Button
+              className="button-icon"
+              onClick={() => dispatch(restart(deckOrder))}
+              aria-label={t('actions.restart')}
+            >
               <Icon iconName="ArrowCounterclockwise" aria-hidden="true" />
             </Button>
           ) : null}
