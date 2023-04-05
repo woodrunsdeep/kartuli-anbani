@@ -14,4 +14,5 @@ I will appreciate any feedback from anyone and will try to improve accordingly.
 
 Available in Russian and English.
 
-Hosted on Netlify
+Hosted on **Netlify**  
+This project is tested with **BrowserStack**  
