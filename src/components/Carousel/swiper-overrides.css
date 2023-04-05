@@ -1,11 +1,16 @@
 .swiper {
-  display: flex;
-  align-items: center;
-  min-height: 560px;
+  width: 100%;
+  padding: 60px 0;
 }
 
 .swiper-slide {
+  height: auto;
+
   transition: transform 450ms ease-in-out;
+}
+
+.swiper-wrapper {
+  align-items: center;
 }
 
 .swiper-slide-transform {

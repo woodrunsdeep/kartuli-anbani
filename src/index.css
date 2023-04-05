@@ -39,6 +39,9 @@
 }
 
 .content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
   --outline-style-base: 2px solid var(--color-accent);
   --outline-offset: 3px;
   --shadow-elevation-low:
