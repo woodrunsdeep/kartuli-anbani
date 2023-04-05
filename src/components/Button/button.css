@@ -36,3 +36,11 @@
   outline: var(--outline-style-base);
   outline-offset: var(--outline-offset);
 }
+
+.button--icon-only {
+  min-height: unset;
+}
+
+.button--small {
+  padding: 4px;
+}
