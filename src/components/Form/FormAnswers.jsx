@@ -5,7 +5,7 @@ import { selectSettings } from '../../slices/settingsSlice';
 import { shuffle } from '../../utils/utils';
 import FormRadioSet from './FormRadioSet';
 
-function FormAnswers() {
+function FormAnswers({ className }) {
   const { deck, currentCardIndex } = useSelector(selectSession);
   const { optionsQty } = useSelector(selectSettings);
   const [options, setOptions] = useState([]);
@@ -25,7 +25,7 @@ function FormAnswers() {
     generateOptions(deck);
   }, [deck, currentCardIndex, optionsQty]);
   return (
-    <FormRadioSet options={options} name="option" required />
+    <FormRadioSet className={className} options={options} name="option" required />
   );
 }
 

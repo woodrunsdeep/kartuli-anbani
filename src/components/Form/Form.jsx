@@ -58,10 +58,10 @@ function Form({ className }) {
         {inputMode === 'text' ? (
           <FormInput language={language} />
         ) : (
-          <FormAnswers language={language} name="option" />
+          <FormAnswers className="form__radio-set--flex" language={language} name="option" />
         )}
       </fieldset>
-      <Button className="form__button button--font-size-l" type="submit">
+      <Button className="form__button" type="submit">
         {language === 'en' ? 'Submit' : 'Ответить'}
       </Button>
     </form>

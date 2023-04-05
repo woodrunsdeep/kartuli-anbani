@@ -47,16 +47,18 @@ function Settings({ closeModal }) {
         dispatch(saveSettings(data));
       }}
     >
-      <h2 className="form__title">
-        {t('settings.title')}
-      </h2>
-      <Button
-        className="button-icon button-icon--small"
-        aria-label={t('settings.actions.close')}
-        onClick={() => closeModal()}
-      >
-        <Icon iconName="X" aria-hidden="true" />
-      </Button>
+      <div className="form__header">
+        <h2 className="form__title">
+          {t('settings.title')}
+        </h2>
+        <Button
+          className="button--icon-only button--small"
+          aria-label={t('settings.actions.close')}
+          onClick={() => closeModal()}
+        >
+          <Icon iconName="X" aria-hidden="true" isFluid />
+        </Button>
+      </div>
       <fieldset className="form__fieldset">
         <div className="form__setting">
           <legend className="form__legend">
