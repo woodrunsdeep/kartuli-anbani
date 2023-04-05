@@ -186,6 +186,7 @@
 @media (min-width: 320px) {
   .form__setting {
     flex-direction: row;
+    align-items: center;
   }
 }
 
