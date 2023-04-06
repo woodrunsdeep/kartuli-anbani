@@ -14,7 +14,7 @@ export default defineConfig({
         name: 'Kartuli Anbani',
         short_name: 'Kartuli',
         description: 'Georgian language learning app',
-        theme_color: '#ffffff',
+        theme_color: '#da291c',
         icons: [
           {
             src: 'android-chrome-192x192.png',
