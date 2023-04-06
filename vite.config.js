@@ -10,6 +10,9 @@ export default defineConfig({
     i18nHotReload(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+      },
       manifest: {
         name: 'Kartuli Anbani',
         short_name: 'Kartuli',
