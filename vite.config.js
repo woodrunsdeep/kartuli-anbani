@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { VitePWA } from 'vite-plugin-pwa';
+import { visualizer } from 'rollup-plugin-visualizer';
 import i18nHotReload from './vite.plugin.i18nHotReload';
 // import stylelint from "vite-plugin-stylelint";
 
@@ -32,5 +33,6 @@ export default defineConfig({
         ],
       },
     }),
+    visualizer(),
   ],
 });
